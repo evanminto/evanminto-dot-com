@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html role="document">
+  <head>
+    <title>Evan Minto | Programmer, Artist, Writer, Musician</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='css/application.css' rel='stylesheet'>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <h1>
+        <a href="">
+          <svg class="site-logo" viewBox="0 0 200.667 48">
+            <title>Evan Minto</title>
+
+            <use xlink:href="images/logo.svg#logo"></use>
+          </svg>
+        </a>
+      </h1>
+
+      <nav
+        id="site_navigation"
+        class="site-navigation"
+        aria-hidden="true"
+        aria-label="Site Navigation"
+      >
+        <ul>
+          <li>
+            <a class="code-link" href="/code">Code</a>
+          </li>
+
+          <li>
+            <a class="art-link" href="/art">Art</a>
+          </li>
+
+          <li>
+            <a class="writing-link" href="/writing">Writing</a>
+          </li>
+
+          <li>
+            <a class="hosting-link" href="/hosting">Hosting</a>
+          </li>
+
+          <li>
+            <a class="music-link" href="/music">Music</a>
+          </li>
+
+          <li>
+            <a href="/resume">Resume</a>
+          </li>
+
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+
+          <li class="social-nav-item">
+            <a class="social-link type-twitter" href="http://twitter.com/VamptVo">
+              <svg viewBox="0 0 512 512">
+                <title>Twitter</title>
+                <use xlink:href="images/social_icons.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="social-nav-item">
+            <a class="social-link type-linkedin" href="">
+              <svg viewBox="0 0 512 512">
+                <title>LinkedIn</title>
+                <use xlink:href="images/social_icons.svg#linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <button
+      class="site-navigation-button js-site-navigation-button"
+      type="button"
+      aria-controls="site_navigation"
+    >
+      <span class="open-text">Menu</span>
+      <span class="close-text">Close</span>
+    </button>
+
+    <main>
+
+      <img
+        class="hero"
+        alt=""
+        src="images/ComputerHistoryMuseumTrip.jpg"
+      >
+
+      <div class="page-content">
+        <h2>Nam a scelerisque lorem, non malesuada felis.</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed metus hendrerit, gravida lectus id, sodales magna. In mattis laoreet nibh. Nullam lorem mauris, lobortis ac ipsum a, consequat malesuada felis. In id volutpat magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam a scelerisque lorem, non malesuada felis. Mauris posuere sollicitudin quam, ut suscipit justo rhoncus id. Mauris egestas lacus sed leo consequat luctus. In ac mauris tempus, facilisis nisi non, fringilla tellus. Vestibulum non elit leo. Etiam iaculis velit non elit accumsan fermentum. Curabitur dapibus ultrices justo, eget dapibus massa lobortis at.
+        </p>
+
+        <ul class="projects">
+          <li>
+            <section class="project">
+              <a href="">
+                <img alt="" src="http://placehold.it/500x500">
+
+                <h3>Crunchyroll</h3>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed metus hendrerit, gravida lectus id, sodales magna.
+                </p>
+              </a>
+            </section>
+          </li>
+
+          <li>
+            <section class="project">
+              <a href="">
+                <img alt="" src="http://placehold.it/500x500">
+
+                <h3>Tofu</h3>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed metus hendrerit, gravida lectus id, sodales magna.
+                </p>
+              </a>
+            </section>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <p>
+        <small>&copy; Evan Minto 2016</small>
+      </p>
+    </footer>
+
+    <script>
+      (function() {
+        var siteNavigationButton = document.querySelector('.js-site-navigation-button');
+        var siteNavigation = document.querySelector('#' + siteNavigationButton.getAttribute('aria-controls'));
+
+        siteNavigationButton.addEventListener('click', function() {
+          var isHidden = (siteNavigation.getAttribute('aria-hidden') === 'true');
+
+          siteNavigationButton.classList.toggle('state-open');
+          document.body.classList.toggle('state-navigation-open');
+
+          siteNavigation.setAttribute('aria-hidden', isHidden ? 'false' : 'true');
+        });
+      })();
+    </script>
+  </body>
+</html>

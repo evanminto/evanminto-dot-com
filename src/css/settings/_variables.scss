@@ -1,0 +1,43 @@
+:root {
+  --color-hue-code: 210;
+
+  --color-black-base: hsl(0, 0%, 10%);
+  --color-dark-base: hsl(0, 0%, 25%);
+  --color-dark-trans-base: hsla(0, 0%, 15%, 0.9);
+  --color-shadow-base: hsla(0, 0%, 10%, 0.35);
+  --color-gray-base: hsl(0, 0%, 50%);
+
+  --color-bright-code: hsl(210, 50%, 49%);
+  --color-bright-art: hsl(210, 86%, 64%);
+  --color-bright-writing: hsl(44, 50%, 49%);
+  --color-bright-hosting: hsl(44, 86%, 64%);
+  --color-bright-music: hsl(355, 50%, 49%);
+
+  --color-white-base: hsl(0, 0%, 98%);
+  --color-white-code: hsl(210, 50%, 98%);
+  --color-white-art: hsl(210, 86%, 98%);
+  --color-white-writing: hsl(44, 50%, 98%);
+  --color-white-hosting: hsl(44, 86%, 98%);
+  --color-white-music: hsl(355, 50%, 98%);
+
+  --color-medium-code: hsl(210, 50%, 35%);
+
+  --color-dark-code: hsl(210, 50%, 20%);
+
+  --color-dark-trans-code: hsla(210, 50%, 15%, 0.9);
+
+  --color-shadow-code: hsla(0, 0%, 10%, 0.35);
+
+  --v-rhythm-modifier: 1.71428571;
+  --v-rhythm: calc(1em * var(--v-rhythm-modifier));
+
+  --color-bright-current: var(--color-bright-code);
+  --color-medium-current: var(--color-medium-code);
+  --color-white-current: var(--color-white-code);
+  --color-dark-current: var(--color-dark-code);
+  --color-dark-trans-current: var(--color-dark-trans-code);
+  --color-shadow-current: var(--color-shadow-code);
+
+  --box-shadow-1: 0 0.1em 0.1em var(--color-shadow-current);
+  --box-shadow-2: 0 0.2em 0.2em var(--color-shadow-current);
+}

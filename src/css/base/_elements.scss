@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-size: 1rem;
+  font-family: "Rubik", "Century Gothic", "HelveticaNeue", "Helvetica", Arial, sans-serif;
+  line-height: 1.71428571;
+
+  background: var(--color-white-base);
+  color: var(--color-dark-base);
+}
+
+h2 {
+  margin: 0.85714286em 0;
+  font-size: 2em;
+  line-height: 1; /* Breaks the vertical rhythm */
+  text-align: center;
+}
+
+p {
+  margin: 1.71428571em 0;
+}
+
+button {
+  font-family: "Rubik", "Century Gothic", "HelveticaNeue", "Helvetica", Arial, sans-serif;
+  font-size: 1em;
+}

@@ -1,0 +1,39 @@
+.site-navigation-button {
+  bottom: var(--v-rhythm);
+  position: fixed;
+  right: var(--v-rhythm);
+
+  box-sizing: border-box;
+  height: calc(3 * var(--v-rhythm));
+  width: calc(3 * var(--v-rhythm));
+
+  text-transform: lowercase;
+
+  background: var(--color-bright-current);
+  border: 0;
+  color: var(--color-white-current);
+
+  border-radius: calc(3 * 0.5 * var(--v-rhythm));
+  box-shadow: var(--box-shadow-2);
+
+  &:focus,
+  &:hover {
+    outline: none;
+
+    background: var(--color-medium-current);
+  }
+
+  &.state-open {
+    .close-text {
+      display: inline;
+    }
+
+    .open-text {
+      display: none;
+    }
+  }
+
+  .close-text {
+    display: none;
+  }
+}
