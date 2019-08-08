@@ -6,10 +6,10 @@
   "scripts": {
     "start": "npm-run-all --parallel dev:*",
     "dev:eleventy": "ELEVENTY_ENV=development eleventy --serve --quiet",
-    "dev:parcel": "parcel watch assets/css/main.css assets/js/pwc/tabs.js assets/js/codepen-embed.js assets/images/*.jpg assets/images/*.png assets/images/**/*.{svg,jpg,png} --out-dir ./dist",
+    "dev:parcel": "parcel watch assets/fonts/*.ttf assets/css/main.css assets/js/pwc/tabs.js assets/js/codepen-embed.js assets/images/*.jpg assets/images/*.png assets/images/**/*.{svg,jpg,png} --out-dir ./dist",
     "build": "run-s prod:*",
     "prod:eleventy": "ELEVENTY_ENV=production eleventy --output=./dist",
-    "prod:parcel": "parcel build assets/css/main.css assets/js/pwc/tabs.js assets/js/codepen-embed.js assets/images/**/*.{jpg,png,svg} --out-dir ./dist/assets",
+    "prod:parcel": "parcel build assets/fonts/*.ttf assets/css/main.css assets/js/pwc/tabs.js assets/js/codepen-embed.js assets/images/*.jpg assets/images/*.png assets/images/**/*.{svg,jpg,png} --out-dir ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Evan Minto",
