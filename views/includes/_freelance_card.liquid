@@ -1,0 +1,26 @@
+<section class="a-callout-box o-freelance-card">
+  <div class="l-split">
+    <h2>
+      {% if titlePrefix %}
+        <span class="a-title-prefix">{{ titlePrefix }}</span>
+      {% endif %}
+      {{ title }}
+    </h2>
+    <p>{{ description }}</p>
+
+    {% if showLogoList %}
+      <section>
+        <h3>{{ logoListTitle }}</h3>
+        <ul class="l-cloud m-logo-list">
+          {% for img in images %}
+            <li>
+              <a href="{{ img.href }}">
+                <img src="{{ img.src }}" alt="{{ img.title }}">
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  </div>
+</section>

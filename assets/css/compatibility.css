@@ -1,0 +1,207 @@
+/* DEFAULT COMPATIBILITY STYLES */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-weight: 500 600 700 800 900;
+  src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+* {
+  margin-bottom: 0;
+  margin-top: 0;
+  transition: all 120ms ease-out;
+}
+
+* + * {
+  margin-top: 1.6em;
+}
+
+pwc-tabs,
+pwc-tab-list,
+pwc-tab,
+pwc-tab-panel,
+codepen-embed {
+  display: block;
+}
+
+html {
+  background: #d3dbde;
+}
+
+body {
+  background: white;
+  font-family:
+    'Montserrat',
+    'Futura',
+    'Century Gothic',
+    'AvantGarde Bk BT',
+    'AvantGarde Md BT',
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
+    sans-serif;
+  line-height: 1.6;
+  max-width: 48em;
+  margin: 0 auto;
+  padding: 1.6em;
+}
+
+a {
+  color: #037cb4;
+}
+
+a:visited {
+  color: #005e8a;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: #c8541e;
+}
+
+@media print {
+  a[href]::after {
+    content: ' (' attr(href) ')';
+  }
+
+  a[href^='/']::after {
+    content: ' (http://evanminto.com' attr(href) ')';
+  }
+
+  a[href='']::after {
+    content: none;
+  }
+}
+
+img,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+img {
+  object-fit: cover;
+  object-fit: center center;
+}
+
+pre {
+  background: black;
+  color: white;
+  overflow-x: auto;
+}
+
+@media print {
+  pre {
+    background: none;
+    color: inherit;
+  }
+}
+
+a code {
+  color: inherit;
+}
+
+pre code {
+  color: inherit;
+  display: block;
+  font-weight: inherit;
+  min-width: max-content;
+  padding: 0.8em;
+}
+
+.a-svg-icon {
+  fill: currentColor;
+  display: inline-block;
+  height: 2em;
+  vertical-align: middle;
+}
+
+.a-svg-icon__alt-color {
+  fill: white;
+}
+
+.a-skip-link {
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  max-width: none;
+  position: absolute;
+  text-align: center;
+  top: -5em;
+}
+
+.a-skip-link:focus,
+.a-skip-link:hover {
+  position: static;
+  width: 100%;
+}
+
+.a-social-link {
+  display: inline-block;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.a-social-link .a-svg-icon {
+  margin-right: 0.125ch;
+}
+
+.m-navbar ul {
+  font-weight: bolder;
+}
+
+.m-navbar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.m-navbar ul:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.m-navbar li {
+  float: left;
+  margin: 0 1.6em 0 0;
+}
+
+.m-logo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.m-logo-list a {
+  display: inline-block;
+}
+
+.m-social-list {
+  list-style: none;
+  padding: 0;
+}
+
+@media print {
+  .o-site-header a::after {
+    content: '';
+  }
+
+  .o-site-header .m-navbar {
+    display: none;
+  }
+}
+
+.l-grid {
+  list-style: none;
+  padding: 0;
+}

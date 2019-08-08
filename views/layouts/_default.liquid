@@ -1,0 +1,28 @@
+<!doctype html>
+<html id="root">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evan Minto</title>
+
+    <link rel="alternate" type="application/rss+xml" title="Evan Minto" href="/feed/blog.xml">
+
+    <script src="/js/pwc/tabs.js" defer></script>
+    <script src="/js/codepen-embed.js" type="module"></script>
+
+    <link href="/css/main.css" rel="stylesheet">
+  </head>
+
+  <body class="{% if pageClass %}p-{{ pageClass }}{% endif %}">
+    <a href="#main_content" class="a-skip-link">Skip to Main Content</a>
+
+    {% include _site_header %}
+
+    <main id="main_content">
+      {{ content }}
+    </main>
+
+    {% include _site_footer %}
+  </body>
+</html>

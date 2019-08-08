@@ -1,0 +1,18 @@
+---
+layout: _default
+---
+{% if title %}
+  <h1>{{ title }}</h1>
+{% endif %}
+
+{% if pageDescription %}
+  {% if pageDescription %}
+    {% for text in pageDescription %}
+      <p>{{ text }}</p>
+    {% endfor %}
+  {% else %}
+    <p>{{ pageDescription }}</p>
+  {% endif %}
+{% endif %}
+
+{{ content }}

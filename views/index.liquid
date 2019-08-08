@@ -1,0 +1,81 @@
+---
+layout: _default
+
+aboutMe:
+  title: Hey There!
+  image:
+    src: /images/headshot.jpg
+    alt: "Evan Minto looking up and slightly smiling. He’s a young white man with
+medium-length hair and black plastic glasses."
+  biography: 'I’m Evan Minto, a freelance web developer, designer, writer,
+    animator, game developer, and musician, living in San Francisco.'
+
+freelanceServices:
+  -
+    title: Web Designer & Developer
+    titlePrefix: I’m a
+    logoListTitle: Clients
+    description: 'I design and build beautiful, accessible, and performant web sites, apps, and
+design systems for my clients. I focus on usability, accessibility, and
+inclusive design. <a href="/contact">I’m accepting new clients.</a>'
+    images:
+      -
+        title: Internet Archive
+        src: //placehold.it/100x50
+        href: https://archive.org
+      -
+        title: Internet Archive
+        src: //placehold.it/100x50
+        href: https://archive.org
+      -
+        title: Internet Archive
+        src: //placehold.it/100x50
+        href: https://archive.org
+  -
+    title: Pop Culture Writer & Speaker
+    titlePrefix: I’m also a
+    logoListTitle: Bylines/Appearances
+    description: 'I write articles and video content covering the history and craft of
+    animation, comics, and video games. I regularly host podcasts, videos,
+live streams, interviews, and lectures on the same subjects. <a href="/contact">I’m
+always on the lookout for new writing and speaking opportunities.</a>'
+    images:
+      -
+        title: Internet Archive
+        src: //placehold.it/100x50
+        href: https://archive.org
+      -
+        title: Internet Archive
+        src: //placehold.it/100x50
+        href: https://archive.org
+      -
+        title: Internet Archive
+        src: //placehold.it/100x50
+        href: https://archive.org
+
+contactLinkText: Drop me a line
+---
+
+<section class="a-content-block">
+  {% include _about_me with
+    title: aboutMe.title,
+    image: aboutMe.image,
+    biography: aboutMe.biography
+  %}
+</section>
+
+<section class="a-content-block">
+  {% for service in freelanceServices %}
+    {% include _freelance_card with
+      title: service.title,
+      titlePrefix: service.titlePrefix,
+      logoListTitle: service.logoListTitle,
+      description: service.description,
+      images: service.images
+    %}
+  {% endfor %}
+</section>
+
+<section class="a-content-block">
+  <a class="a-call-to-action-link" href="/contact">{{ contactLinkText }}</a>
+</section>
