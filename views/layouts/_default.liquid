@@ -1,5 +1,5 @@
 <!doctype html>
-<html id="root">
+<html id="root" class="{% if widePage %}d-wide{% endif %}">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,9 @@
     {% include _site_header %}
 
     <main id="main_content">
-      {{ content }}
+      {% if widePage %}<div class="l-switcher">{% endif %}
+        {{ content }}
+      {% if widePage %}</div>{% endif %}
     </main>
 
     {% include _site_footer %}

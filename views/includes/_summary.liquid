@@ -1,30 +1,33 @@
 <section class="m-summary">
-  <h3>{{ title }}</h3>
-  {% if img %}
-    <img
-      src="{{ img.src }}"
-      alt="{{ img.alt }}"
-      {% if img.focalPoint %}
-        style="--focal-point: {{ img.focalPoint }}"
-      {% endif %}
-    >
-  {% endif %}
+  <div class="l-stack">
+    <h3>{{ title }}</h3>
+    {% if img %}
+      <img
+        src="{{ img.src }}"
+        alt="{{ img.alt }}"
+        class="u-reorder-first"
+        {% if img.focalPoint %}
+          style="--focal-point: {{ img.focalPoint }}"
+        {% endif %}
+      >
+    {% endif %}
 
-  {% if description %}
-    <p>{{ description }}</p>
-  {% endif %}
+    {% if description %}
+      <p>{{ description }}</p>
+    {% endif %}
 
-  {% if link %}
-    <p>
-      <a href="{{ link.href }}">{{ link.text }}</a>
-    </p>
-  {% endif %}
-
-  {% if links %}
-    {% for link in links %}
+    {% if link %}
       <p>
         <a href="{{ link.href }}">{{ link.text }}</a>
       </p>
-    {% endfor %}
-  {% endif %}
+    {% endif %}
+
+    {% if links %}
+      {% for link in links %}
+        <p>
+          <a href="{{ link.href }}">{{ link.text }}</a>
+        </p>
+      {% endfor %}
+    {% endif %}
+  </div>
 </section>

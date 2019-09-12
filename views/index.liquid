@@ -16,8 +16,7 @@ freelanceServices:
     titlePrefix: I’m a
     logoListTitle: Clients
     description: 'I design and build beautiful, accessible, and performant web sites, apps, and
-design systems for my clients. I focus on usability, accessibility, and
-inclusive design. <a href="/contact">I’m accepting new clients.</a>'
+design systems.'
     images:
       -
         title: Internet Archive
@@ -35,10 +34,8 @@ inclusive design. <a href="/contact">I’m accepting new clients.</a>'
     title: Pop Culture Writer & Speaker
     titlePrefix: I’m also a
     logoListTitle: Bylines/Appearances
-    description: 'I write articles and video content covering the history and craft of
-    animation, comics, and video games. I regularly host podcasts, videos,
-live streams, interviews, and lectures on the same subjects. <a href="/contact">I’m
-always on the lookout for new writing and speaking opportunities.</a>'
+    description: 'I write and speak about the history and craft of
+    animation, comics, and video games for a variety of publications, channels, and live events.'
     images:
       -
         title: Internet Archive
@@ -53,7 +50,9 @@ always on the lookout for new writing and speaking opportunities.</a>'
         src: //placehold.it/100x50
         href: https://archive.org
 
+contactSectionTitle: Now Accepting New Clients
 contactLinkText: Drop me a line
+widePage: true
 ---
 
 <section class="a-content-block">
@@ -65,17 +64,22 @@ contactLinkText: Drop me a line
 </section>
 
 <section class="a-content-block">
-  {% for service in freelanceServices %}
-    {% include _freelance_card with
-      title: service.title,
-      titlePrefix: service.titlePrefix,
-      logoListTitle: service.logoListTitle,
-      description: service.description,
-      images: service.images
-    %}
-  {% endfor %}
+  <div class="o-freelance-cards">
+    <div class="l-switcher">
+      {% for service in freelanceServices %}
+        {% include _freelance_card with
+          title: service.title,
+          titlePrefix: service.titlePrefix,
+          logoListTitle: service.logoListTitle,
+          description: service.description,
+          images: service.images
+        %}
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
-<section class="a-content-block">
+<section class="a-content-block m-contact-teaser l-switcher__standalone">
+  <h2>{{ contactSectionTitle }}</h2>
   <a class="a-call-to-action-link" href="/contact">{{ contactLinkText }}</a>
 </section>
