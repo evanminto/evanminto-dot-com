@@ -548,11 +548,20 @@
   .l-cloud {
     --list-before-content: none;
 
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-left: calc(-1 * var(--flow-gap-inline));
+    margin-bottom: calc(-1 * var(--flow-gap-block));
     padding: 0;
   }
 
   .l-cloud > * {
-    display: inline-block;
+    margin-left: var(--flow-gap-inline);
+    margin-bottom: var(--flow-gap-block);
+    /* display: inline-block; */
   }
 
   .l-grid {
@@ -703,6 +712,10 @@
     will-change: box-shadow;
   }
 
+  .a-content-block > * {
+    --flow-gap-block: var(--space-md);
+  }
+
   .a-content-block > .a-call-to-action-link:only-child {
     margin-left: auto;
     margin-right: auto;
@@ -711,6 +724,38 @@
   .a-title-prefix {
     font-size: var(--font-size-smaller);
     font-weight: 400;
+  }
+
+  .a-client-logo {
+    --color-link: var(--color-blue-dark);
+    --color-link-hover: var(--color-blue);
+    --color-link-focus: var(--color-blue);
+    --color-link-active: var(--color-blue);
+
+    display: block;
+    margin: 0;
+    mask-image: var(--src);
+    mask-size: cover;
+    opacity: 0.667;
+    padding: 0;
+    position: relative;
+  }
+
+  .a-client-logo img {
+    max-height: 4em;
+    max-width: 12em;
+  }
+
+  @supports (mask-image: var(--src)) and (mask-size: cover) {
+    .a-client-logo::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: currentColor;
+    }
   }
 
   /* Molecules */
@@ -1220,6 +1265,10 @@
 
   .u-visually-hidden:first-child + * {
     --flow-gap-self: 0;
+  }
+
+  .u-text-center {
+    text-align: center !important;
   }
 
   .u-reorder-first {

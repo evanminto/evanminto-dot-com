@@ -50,6 +50,29 @@ design systems.'
         src: //placehold.it/100x50
         href: https://archive.org
 
+clientsSectionTitle: Clients Include
+clients:
+  -
+    href: https://archive.org
+    imgSrc: /images/clients/client-logo-internet-archive.png
+    imgAlt: Internet Archive
+  -
+    href: https://us.too.com/
+    imgSrc: /images/clients/client-logo-copic.png
+    imgAlt: COPIC
+  -
+    href: https://sfai.edu
+    imgSrc: /images/clients/client-logo-sfai.png
+    imgAlt: San Francisco Art Institute
+  -
+    href: https://blockpunk.net
+    imgSrc: /images/clients/client-logo-blockpunk.png
+    imgAlt: BlockPunk
+  -
+    href: https://crunchyroll.com
+    imgSrc: /images/clients/client-logo-crunchyroll.png
+    imgAlt: Crunchyroll
+
 contactSectionTitle: Now Accepting New Clients
 contactLinkText: Drop me a line
 widePage: true
@@ -77,6 +100,20 @@ widePage: true
       {% endfor %}
     </div>
   </div>
+</section>
+
+<section class="a-content-block l-switcher__standalone">
+  <h2 class="u-text-center">{{ clientsSectionTitle }}</h2>
+
+  <ul class="l-cloud">
+    {% for client in clients %}
+      <li>
+        <a class="a-client-logo" href="{{ client.href }}" style="--src: url('{{ client.imgSrc }}');">
+          <img src="{{ client.imgSrc }}" alt="{{ client.imgAlt }}">
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 </section>
 
 <section class="a-content-block m-contact-teaser l-switcher__standalone">
