@@ -38,6 +38,14 @@ module.exports = function(eleventyConfig) {
     `;
   });
 
+  eleventyConfig.addPairedShortcode('attentionbox', function(content) {
+    return `
+<div class="a-attention-box">
+  ${content}
+</div>
+    `;
+  });
+
   return {
     dir: {
       input: 'views',

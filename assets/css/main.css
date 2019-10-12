@@ -62,7 +62,7 @@
     --font-family-monospace: monospace;
 
     --font-scale: 1.25;
-    --font-size-md: calc(0.85rem + 0.25vw + 0.25vh);
+    --font-size-md: calc(0.9rem + 0.2vw + 0.2vh);
     --font-size-sm: calc(var(--font-size-md) / var(--font-scale));
     --font-size-lg: calc(var(--font-size-md) * var(--font-scale));
     --font-size-xl: calc(var(--font-size-lg) * var(--font-scale));
@@ -71,6 +71,7 @@
     --font-size-smaller: calc(1em / var(--font-scale));
     --font-size-larger: calc(1em * var(--font-scale));
 
+    --measure: 80ch;
     --line-height: 1.667;
 
     --space-md: calc(var(--line-height) * var(--font-size-md));
@@ -110,6 +111,7 @@
     --duration-medium: 400ms;
     --duration-long: 850ms;
 
+    --content-max-width-sm: calc(var(--space-md) * 28);
     --content-max-width: calc(var(--space-md) * 40);
     --content-max-width-lg: calc(var(--space-md) * 48);
   }
@@ -208,7 +210,7 @@
   }
 
   p {
-    max-width: 75ch;
+    max-width: var(--measure);
   }
 
   p strong {
@@ -360,6 +362,14 @@
 
   ::-moz-focus-inner {
     border: 0;
+  }
+
+  /*
+    This will hide the focus indicator if the element receives focus via the mouse,
+    but it will still show up on keyboard focus.
+  */
+  .js-focus-visible :focus:not(.focus-visible) {
+    box-shadow: none;
   }
 
   /* Custom Element Defaults */
@@ -565,7 +575,6 @@
   }
 
   .l-grid {
-    --first-item-column-end: auto;
     --list-before-content: none;
 
     display: grid;
@@ -577,18 +586,6 @@
     height: 100%;
     margin: 0;
     padding: 0;
-  }
-
-  .l-grid--with-highlight {
-    --first-item-column-end: -1;
-  }
-
-  .l-grid > :only-child {
-    grid-column: 1 / var(--first-item-column-end);
-  }
-
-  .l-grid > :first-child:nth-last-child(n + 3) {
-    grid-column: 1 / var(--first-item-column-end);
   }
 
   /* Atoms */
@@ -606,6 +603,19 @@
     border-radius: var(--border-radius-md);
     box-shadow: var(--box-shadow-hard);
     padding: var(--space-md);
+  }
+
+  .a-attention-box {
+    background: var(--color-light);
+    border: 0.5rem solid var(--color-orange-dark);
+    color: var(--color-orange-dark);
+    padding: var(--space-sm);
+  }
+
+  .a-attention-box strong:first-of-type {
+    color: inherit;
+    letter-spacing: 0.05ch;
+    text-transform: uppercase;
   }
 
   .a-skip-link {
@@ -732,13 +742,18 @@
     --color-link-focus: var(--color-blue);
     --color-link-active: var(--color-blue);
 
+    color: var(--color-blue-dark);
     display: block;
-    margin: 0;
+    margin: calc(-1 * var(--space-sm));
+    opacity: 0.667;
+    padding: var(--space-sm);
+    position: relative;
+  }
+
+  .a-client-logo__inner {
+    display: block;
     mask-image: var(--src);
     mask-size: cover;
-    opacity: 0.667;
-    padding: 0;
-    position: relative;
   }
 
   .a-client-logo img {
@@ -747,7 +762,7 @@
   }
 
   @supports (mask-image: var(--src)) and (mask-size: cover) {
-    .a-client-logo::before {
+    .a-client-logo__inner::before {
       content: '';
       position: absolute;
       left: 0;
@@ -879,6 +894,23 @@
     --box-shadow-focus: 0 0 0 transparent;
   }
 
+  .m-blog-cta {
+
+  }
+  .m-blog-cta::before,
+  .m-blog-cta::after {
+    content: '';
+    display: table;
+  }
+
+  .m-blog-cta::after {
+    clear: both;
+  }
+
+  .m-blog-cta > * {
+    --flow-gap: var(--space-sm);
+  }
+
   .m-blog-cta > img {
     margin-left: auto;
     margin-right: auto;
@@ -888,8 +920,8 @@
     .m-blog-cta > img {
       float: left;
       margin-bottom: var(--flow-gap);
-      margin-right: var(--flow-gap);
-      shape-margin: var(--flow-gap);
+      margin-right: var(--space-md);
+      shape-margin: var(--space-md);
       shape-outside: border-box;
     }
 
@@ -944,8 +976,13 @@
     border-radius: var(--border-radius-md);
     display: flex;
     flex-direction: column;
+    font-size: var(--font-size-sm);
     height: 100%;
     padding: var(--padding-v) var(--padding-h);
+  }
+
+  .m-summary > * {
+    --flow-gap-self: var(--space-xs);
   }
 
   .m-summary > header {
@@ -959,7 +996,7 @@
 
   .m-summary > .l-stack,
   .m-summary > .l-stack > * {
-    --flow-gap: var(--space-sm);
+    --flow-gap: var(--space-xs);
   }
 
   .m-summary > .l-stack > img {
@@ -976,7 +1013,7 @@
 
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
-    height: calc(var(--space-md) * 8);
+    height: calc(var(--space-md) * 7);
     margin-top: 0;
     margin-left: calc(-1 * var(--padding-h));
     margin-right: calc(-1 * var(--padding-h));
@@ -1090,16 +1127,24 @@
   }
 
   /* Organisms */
-  .o-post > * {
-    --flow-gap: var(--space-lg);
-  }
-
   .o-post {
     position: relative;
   }
 
   .o-post > * {
     --flow-gap: var(--space-md);
+  }
+
+  .o-post::after {
+    content: '';
+
+    background: var(--color-blue);
+    border-radius: var(--border-radius-md);
+    display: block;
+    height: var(--space-xs);
+    margin: var(--space-lg) auto 0 auto;
+    max-width: 100%;
+    width: calc(15% + 5rem);
   }
 
   .o-site-header {
@@ -1247,6 +1292,11 @@
       -webkit-print-color-adjust: exact;
       color-adjust: exact;
     }
+  }
+
+  /* Pages */
+  .p-blog-post {
+    --content-max-width: var(--content-max-width-sm);
   }
 
   /* Documents */
