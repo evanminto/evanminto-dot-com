@@ -241,4 +241,62 @@ br {
 ```
 {% endcodepen %}
 
+Or we can build an even more expressive collection of custom properties to allow consumers of this component to fine-tune the sizing of both the float and the text next to it. In this version, the `--breakpoint` isn’t a fixed value; it’s computed by adding together the minimum size of the float, the gap, and the `--min-measure`, a length using `ch` units (each is equal to the width of the `0` character in the current font). Now we don’t have to express the breakpoint as a fixed number. We can express it based on the minimum number of characters we want to see in the right-hand column before breaking to the stacked version of the layout.
+
+{% codepen 'https://codepen.io/vamptvo/pen/eYYJRVV', 'Switcher Float with min() and --min-measure' %}
+```css
+.float {
+  /* Add up the components that make up the total width: target float size, gap, and target measure. */
+  --breakpoint: calc(
+    var(--min-size) +
+    var(--gap) +
+    var(--min-measure)
+  );
+
+  /* Minimum number of characters to show in a line of text next to the float before making the float fill the container. */
+  --min-measure: 30ch;
+
+  /* Minimum size of the float when it's actually floating. Set the fallback version to customize percentage behavior and set the advanced one to customize fixed width behavior. */
+  --min-size: var(--min-size-fallback);
+  --min-size-fallback: 33.333%;
+  --min-size-advanced: 20rem;
+
+  /* Gap between the float and its surrounding elements. */
+  --gap: 1.5rem;
+
+  /* Width of the float will change based on container size. */
+  --switcher-width: calc((var(--breakpoint) - 100%) * 9999);
+
+  float: left;
+  width: var(--switcher-width);
+  min-width: var(--min-size);
+  max-width: 100%;
+  margin-right: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+@supports (width: max(1rem, min(calc(2rem + 3rem), 4rem))) {
+  .float {
+    /* Set the minimum size to the advanced version, since it's supported. */
+    --min-size: var(--min-size-advanced);
+
+    width: max(
+      min(
+        var(--min-size),
+        100%
+      ),
+      min(
+        var(--switcher-width),
+        100%
+      )
+    );
+
+    /* Remove these constraints, since the max() and min() expression above handles them already. */
+    min-width: 0;
+    max-width: none;
+  }
+}
+```
+{% endcodepen %}
+
 And there you have it! Floats that respond to the container size. Another old-school CSS layout that we can transform into a modern, intrinsically responsive version.
