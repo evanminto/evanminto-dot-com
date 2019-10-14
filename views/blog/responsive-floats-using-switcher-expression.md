@@ -18,9 +18,8 @@ Still, now that we’ve got these new tools, floats are starting to show their a
 
 What if I want an element to float in some circumstances but _not_ float in others? Like, say, when the container gets too small and the text column next to the floated element becomes unreadably small? Previously I would have used a media query to solve this, but doing so couples my float’s state to the _viewport_ size, meaning that I can’t use it in a reusable component.
 
-What we really need is something like the [“Switcher” from Every Layout](https://every-layout.dev/layouts/switcher/): something that can **switch between floated and un-floated versions based on the container size**. It turns out we can achieve just that by stealing a bit of code from that very same Switcher layout! Without further ado:
+What we really need is something like the [“Switcher” from Every Layout](https://every-layout.dev/layouts/switcher/): a component that can **switch between floated and un-floated versions based on the container size**. It turns out we can achieve just that by stealing a bit of code from that very same Switcher layout! Without further ado:
 
-{% codepen 'https://codepen.io/vamptvo/pen/MWWKKJz', 'Switcher Float' %}
 ```css
 .float {
   --breakpoint: 40rem;
@@ -35,7 +34,8 @@ What we really need is something like the [“Switcher” from Every Layout](htt
   margin-right: var(--gap);
 }
 ```
-{% endcodepen %}
+
+{% codepen 'https://codepen.io/vamptvo/pen/MWWKKJz', 'Switcher Float' %}{% endcodepen %}
 
 The element now floats to the left and takes up 40% of the container width. When the container width drops below `40rem`, the floated element takes up 100% of the container width and pushes the surrounding text underneath it.
 
@@ -80,7 +80,6 @@ The biggest caveat is that `min-width` has to be a percentage length. This can b
 
 Thankfully, as I mentioned in the Grid post, Safari supports some new functions that can help us here.
 
-{% codepen 'https://codepen.io/vamptvo/pen/ZEEQQJP', 'Switcher Float with min()' %}
 ```css
 --min-size: 20rem;
 --switcher-width: calc((var(--breakpoint) - 100%) * 9999);
@@ -96,7 +95,7 @@ width: max(
   )
 );
 ```
-{% endcodepen %}
+{% codepen 'https://codepen.io/vamptvo/pen/ZEEQQJP', 'Switcher Float with min()' %}{% endcodepen %}
 
 Using the `min()` and `max()` functions, we can clamp the switcher value _and_ prevent overflow in small containers. The `min()` functions prevent either the `--min-size` or the `--switcher-width` from exceeding the width of the container, ensuring that they are safe to use without any overflow. Then the `max()` function selects the larger of the two values to use as the final computed width.
 
