@@ -12,11 +12,11 @@ tags:
 
 ![A floated box with text wrapping around it, and another box laid out as a block, with text underneath it.](/images/blog/responsive-floats.jpg)
 
-Back in the day (...five or ten years ago), if you wanted to put two things next to each other in CSS, you needed to use floats. It was a hack, misusing a feature meant for making simple floated images to create multi-column layouts. These days Flexbox and Grid have replaced the handy ol’ float, so we can float only the things that _should_ be floated.
+Back in the day (...five or ten years ago), if you wanted to put two things next to each other in CSS, you needed to use floats. It was a hack, taking a feature meant for wrapping text around images and abusing it to create multi-column layouts. These days Flexbox and Grid have replaced the handy ol’ float for this purpose, so we can finally float only the things that _should_ be floated.
 
 Still, now that we’ve got these new tools, floats are starting to show their age. Flexbox and Grid have mechanisms for dynamically allocating space based on the container size (Flexbox is all about exactly this, and Grid has `auto-fill`/`auto-fit`), but floats just... float.
 
-What if I want an element to float in some circumstances but _not_ float in others? Like, say, when the container gets too small and the text column next to the floated element becomes unreadably small? Previously I would have used a media query to solve this, but doing so couples my float’s state to the _viewport_ size, meaning that I can’t use it in a reusable component.
+What if I want an element to float in some circumstances but _not_ float in others? For example, when the container gets too small and the text is getting pushed out by the floated element, I’d like it to stop floating and just behave like a regular, un-floated block. Previously I would have used a media query to solve this, but doing so couples my float’s state to the _viewport_ size, meaning that I can’t use it in a reusable component. Another option is to set the float’s width to a percentage (say, 50% of the container width), but then we end up with a teensy tiny floated element when the container gets really small.
 
 What we really need is something like the [“Switcher” from Every Layout](https://every-layout.dev/layouts/switcher/): a component that can **switch between floated and un-floated versions based on the container size**. It turns out we can achieve just that by stealing a bit of code from that very same Switcher layout! Without further ado:
 
