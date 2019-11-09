@@ -1,5 +1,5 @@
 <article>
-  <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+  <h2><a href="{{ post.url }}">Episode {{ post.data.episodeNumber }}: {{ post.data.title }}</a></h2>
   <date>{{ post.date | date("dddd, MMMM D, YYYY") }}</date>
   <a href="{{ post.data.mp3Url }}">Direct Download</a>
 </article>

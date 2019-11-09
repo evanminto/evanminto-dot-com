@@ -1,7 +1,8 @@
 ---
 layout: _shadow_particles_post
 
-title: "Episode 1: Lyra’s Jordan"
+episodeNumber: 1
+title: Lyra’s Jordan
 
 mp3Url: "Test"
 
