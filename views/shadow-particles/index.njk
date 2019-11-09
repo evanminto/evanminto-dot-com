@@ -1,0 +1,11 @@
+---
+layout: _shadow_particles
+---
+
+<ol reversed>
+  {%- for post in collections.shadowParticlesEpisode %}
+    <li>
+      {%- include 'shadow_particles/_episode_summary.njk' -%}
+    </li>
+  {% endfor -%}
+</ol>

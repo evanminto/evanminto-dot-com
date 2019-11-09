@@ -1,0 +1,30 @@
+---
+logoIsHeading: true
+---
+<!doctype html>
+
+<title>Shadow Particles: A His Dark Materials Companion Podcast</title>
+
+<link href="/css/shadow-particles.css" rel="stylesheet">
+
+<header>
+{%- if logoIsHeading -%}
+<h1>
+{%- else -%}
+<div>
+{%- endif -%}
+  <a href="{{ shadowParticles.url }}">Shadow Particles: A His Dark Materials Companion Podcast</a>
+{%- if logoIsHeading -%}
+</h1>
+{%- else -%}
+</div>
+{%- endif -%}
+</header>
+
+<main>
+  {{ content | safe }}
+</main>
+
+<footer>
+  © 2019 Evan Minto
+</footer>
