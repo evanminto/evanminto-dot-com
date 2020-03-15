@@ -6,7 +6,17 @@ module.exports = function(eleventyConfig) {
       .filter(item => {
         return item.data.mainNav;
       })
-      .sort((a, b) => ((a.data.mainNavOrder || 0) > (b.data.mainNavOrder || 0)));
+      .sort((a, b) => {
+        if (a.data.mainNavOrder === null || a.data.mainNavOrder === undefined) {
+          return false;
+        }
+
+        if (b.data.mainNavOrder === null || b.data.mainNavOrder === undefined) {
+          return true;
+        }
+
+        return a.data.mainNavOrder > b.data.mainNavOrder;
+      });
   });
 
   eleventyConfig.addNunjucksFilter('limit', function(array, limit) {
