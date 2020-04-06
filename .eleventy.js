@@ -3,19 +3,21 @@ const moment = require("moment");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('mainNav', collection => {
     return collection.getAll()
-      .filter(item => {
-        return item.data.mainNav;
-      })
+      .filter(item => item.data.mainNav)
       .sort((a, b) => {
-        if (a.data.mainNavOrder === null || a.data.mainNavOrder === undefined) {
+        const [orderA, orderB] = [a, b].map(
+          item => parseInt(item.data.mainNavOrder, 10)
+        );
+
+        if (orderA === null || orderA === undefined) {
           return false;
         }
 
-        if (b.data.mainNavOrder === null || b.data.mainNavOrder === undefined) {
+        if (orderB === null || orderB === undefined) {
           return true;
         }
 
-        return a.data.mainNavOrder > b.data.mainNavOrder;
+        return orderA > orderB;
       });
   });
 
