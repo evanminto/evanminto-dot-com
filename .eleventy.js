@@ -2,23 +2,24 @@ const moment = require("moment");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('mainNav', collection => {
-    return collection.getAll()
-      .filter(item => item.data.mainNav)
-      .sort((a, b) => {
+    const items = collection.getAll()
+      .filter(item => item.data.mainNav);
+
+    items.sort((a, b) => {
         const [orderA, orderB] = [a, b].map(
           item => parseInt(item.data.mainNavOrder, 10)
         );
 
-        if (orderA === null || orderA === undefined) {
-          return false;
+        if (orderA === orderB) {
+          return 0;
+        } else if (orderA > orderB) {
+          return 1;
+        } else {
+          return -1;
         }
-
-        if (orderB === null || orderB === undefined) {
-          return true;
-        }
-
-        return orderA > orderB;
       });
+
+    return items;
   });
 
   eleventyConfig.addNunjucksFilter('limit', function(array, limit) {
