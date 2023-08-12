@@ -344,8 +344,7 @@ categories:
         <ul class="l-grid">
           {% for project in category.projects %}
             <li>
-              {% include _summary with title: project.title, img: project.img,
-              url: project.url, description: project.description, subtitle: project.subtitle %}
+              {% include _summary, title: project.title, img: project.img, url: project.url, description: project.description, subtitle: project.subtitle %}
             </li>
           {% endfor %}
         </ul>

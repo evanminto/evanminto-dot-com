@@ -1,6 +1,10 @@
 const moment = require("moment");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: false,
+  });
+
   eleventyConfig.addCollection('mainNav', collection => {
     const items = collection.getAll()
       .filter(item => item.data.mainNav);
