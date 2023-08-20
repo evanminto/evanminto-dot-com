@@ -1,0 +1,23 @@
+<article class="o-project">
+  <header>
+    {% if title %}
+      <h1>{{ title }}</h1>
+    {% endif %}
+
+    {% if subtitle %}
+      <p class="o-project__subtitle">{{ subtitle }}</p>
+    {% endif %}
+  </header>
+
+  {% if img %}
+    <img src="{{ img.src }}" alt="{{ img.alt }}">
+  {% endif %}
+
+  {% if description %}
+    <p>{{ description }}</p>
+  {% endif %}
+
+  {% if viewUrl %}
+    <a href="{{ viewUrl }}" class="a-call-to-action-link">View Project</a>
+  {% endif %}
+</article>

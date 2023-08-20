@@ -5,24 +5,22 @@
       class="a-logo-link"
       rel="home"
       {% if page.url == '/' %}
-        aria-current="page"
-      {% endif %}
-    >
+      aria-current="page"
+      {% endif %}>
       {{ site.name }}
     </a>
 
     <nav class="m-navbar">
       <ul>
-        {% for navPage in collections.mainNav %}
+        {% for navPage in nav %}
           <li>
             <a
               href="{{ navPage.url }}"
               class="a-nav-link"
               {% if page.url contains navPage.url %}
-                aria-current="page"
-              {% endif %}
-            >
-              {{ navPage.data.navTitle | default: navPage.data.title }}
+              aria-current="page"
+              {% endif %}>
+              {{ navPage.name }}
             </a>
           </li>
         {% endfor %}

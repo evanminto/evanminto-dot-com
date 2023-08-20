@@ -4,6 +4,10 @@
     "url": "/work"
   },
   {
+    "name": "Posts",
+    "url": "/blog"
+  },
+  {
     "name": "Contact",
     "url": "/contact"
   }

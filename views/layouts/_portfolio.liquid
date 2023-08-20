@@ -1,0 +1,18 @@
+---
+layout: _default
+---
+
+<h1>{{ title }}</h1>
+
+<ul class="l-masonry-horizontal">
+  {% for project in collections[collectionName] %}
+    {% assign img = project.data[imgKey] %}
+    {% if not img and imgKey %}
+      {% assign img = project.data.img %}
+    {% endif %}
+
+    <li style="--l-masonry-horizontal__ratio: {{  img.width }} / {{  img.height }};">
+      {% include _project-card, title: project.data.title, url: project.page.url, img: img, class: 'l-masonry-horizontal__content' %}
+    </li>
+  {% endfor %}
+</ul>

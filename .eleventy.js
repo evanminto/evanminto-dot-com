@@ -1,30 +1,41 @@
 const moment = require("moment");
 
+function sortProjects(projects) {
+  return projects.sort((a, b) => {
+    if (a.data.endDate === 'Present' || a.data.endDate > b.data.endDate) {
+      return -1;
+    }
+
+    return 1;
+  });
+}
+
+/**
+ *
+ * @param {import('@11ty/eleventy').UserConfig} eleventyConfig
+ * @returns
+ */
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('images');
+
   eleventyConfig.setLiquidOptions({
     dynamicPartials: false,
   });
 
-  eleventyConfig.addCollection('mainNav', collection => {
-    const items = collection.getAll()
-      .filter(item => item.data.mainNav);
+  eleventyConfig.addCollection('showcaseProjects', collectionApi =>
+    collectionApi.getFilteredByTags('project', 'showcase'));
 
-    items.sort((a, b) => {
-        const [orderA, orderB] = [a, b].map(
-          item => parseInt(item.data.mainNavOrder, 10)
-        );
+  eleventyConfig.addCollection('designProjects', collectionApi =>
+    sortProjects(collectionApi.getFilteredByTags('project', 'design')));
 
-        if (orderA === orderB) {
-          return 0;
-        } else if (orderA > orderB) {
-          return 1;
-        } else {
-          return -1;
-        }
-      });
+  eleventyConfig.addCollection('webDevProjects', collectionApi =>
+    sortProjects(collectionApi.getFilteredByTags('project', 'webDev')));
 
-    return items;
-  });
+  eleventyConfig.addCollection('artProjects', collectionApi =>
+    sortProjects(collectionApi.getFilteredByTags('project', 'art')));
+
+  eleventyConfig.addCollection('gameDevProjects', collectionApi =>
+    sortProjects(collectionApi.getFilteredByTags('project', 'gameDev')));
 
   eleventyConfig.addNunjucksFilter('limit', function(array, limit) {
     return array.slice(0, limit);

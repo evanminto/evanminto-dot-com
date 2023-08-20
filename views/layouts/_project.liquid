@@ -1,0 +1,9 @@
+---
+layout: _default
+
+pageClass: project
+
+eleventyComputed:
+  title: "{{ title }}"
+---
+{% include _project, title: title, subtitle: subtitle, description: content, img: img, viewUrl: viewUrl, gallery: gallery %}
