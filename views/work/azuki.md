@@ -24,3 +24,9 @@ viewUrl: https://www.azuki.co
 Providing a full suite of design services as a co-founder on a small startup
 team. Brand identity, user research, UX design for Web/iOS/Android, marketing
 design, and more.
+
+- Azuki Discover Screen: Unified search and browse experience with sorting and filtering
+- Azuki Volume Purchases: Introducing individual purchases alongside core subscription features
+- Azuki Manga Reader: Cross-platform comic book reader interface
+- Kodansha User Research: Deep dive on user goals and behaviors to inform site redesign
+- Video Game Stream Overlay: Dynamic retro game-inspired Twitch overlay

@@ -1,0 +1,21 @@
+<div class="m-phase">
+  <h2>{{ title }}</h2>
+
+  {% if image and image.src %}
+    <img src="{{ image.src }}" alt="{{ image.alt }}">
+  {% endif %}
+
+  {% if items %}
+    <ul>
+      {% for item in items %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if resultItems %}
+    {% for item in resultItems %}
+      {% include _results_data, value: item.value, label: item.label %}
+    {% endfor %}
+  {% endif %}
+</div>

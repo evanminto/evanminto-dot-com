@@ -6,6 +6,12 @@
 
     {% if subtitle %}
       <p class="o-project__subtitle">{{ subtitle }}</p>
+    {% elsif detail or startDate or endDate %}
+      <p class="o-project__subtitle">
+        {{ startDate }}
+        {% if endDate %}– {{ endDate }}{% endif %}
+        {% if startDate and detail %}| {{ detail }}{% endif %}
+      </p>
     {% endif %}
   </header>
 

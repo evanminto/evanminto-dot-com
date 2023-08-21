@@ -85,6 +85,6 @@ module.exports = function(eleventyConfig) {
 
     passthroughFileCopy: true,
 
-    markdownTemplateEngine: 'njk',
+    markdownTemplateEngine: 'liquid',
   };
 };
