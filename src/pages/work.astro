@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import LandingPage from '../layouts/LandingPage.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import { Content as WebExperience } from '../components/WebExperience.md';
+import arrow from '../svg/arrow.svg?raw';
+import Cta from '../components/Cta.astro';
+
+const caseStudies = (await getCollection('case-studies')).sort((cs1, cs2) =>
+  cs1.data.sortOrder < cs2.data.sortOrder ? -1 : 1,
+);
+---
+
+<LandingPage title="Work">
+  <div class="l-stack l-stack--xl">
+    <div class="l-stack l-stack--md">
+      <p>
+        I’m a product designer who codes and an expert frontend dev. Check out
+        some of my case studies below.
+      </p>
+
+      <div class="container l-stack l-stack--lg">
+        {
+          caseStudies.map(({ slug, data }) => (
+            <article class="case-study-card-new">
+                <img
+                  class="case-study-card-new__image"
+                  src={data.img.src}
+                  alt={data.img.alt}
+                  width={data.img.width}
+                  height={data.img.height}
+                />
+      
+                <div class="l-stack l-stack--sm">
+                  <div class="l-stack l-stack--compact">
+                    <h2 class="title title--card">{data.title}</h2>
+      
+                    <p>{data.summary}</p>
+                  </div>
+      
+                  <div>
+                    <Cta href={`/case-studies/${slug}`} class="case-study-card-new__cta" rel="prefetch-intent">
+                      View Case Study
+                    </Cta>
+                  </div>
+                </div>
+              </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="l-stack l-stack--sm">
+      <h2 class="title title--section">Experience</h2>
+      <WebExperience />
+    </div>
+  </div>
+</LandingPage>

@@ -1,0 +1,49 @@
+---
+import dayjs from 'dayjs';
+import Default from './Default.astro';
+
+interface Props {
+  url: string;
+  title: string;
+  date: Date;
+}
+
+const { slug } = Astro.params;
+const { url, title, date } = Astro.props;
+---
+
+<Default title={title} pageClass="blog-post">
+  <article class="o-post">
+    <header class="m-post-header">
+      <h1 class="title title--page">
+        <a href={url}>{title}</a>
+      </h1>
+
+      <p class="a-timestamp">
+        Published <time>{dayjs(date).format('MMMM D, YYYY')}</time>
+      </p>
+    </header>
+
+    <div class="m-post-body">
+      <slot />
+    </div>
+  </article>
+
+  <div class="m-blog-cta">
+    <img
+      class="a-headshot"
+      src="/images/headshot.jpg"
+      alt="Evan Minto looking up and slightly smiling. He’s a young white man with medium-length hair and black plastic glasses."
+    />
+
+    <h2>Let’s Do Some Work Together</h2>
+
+    <p>
+      Hey there! I’m Evan Minto, a UX designer and web developer. I help
+      organizations big and small tackle challenging problems from concept to
+      execution, with modern design sensibilities and an emphasis on user
+      research, responsive design, and accessibility. Got a project?
+      <a href="/contact">Let’s talk.</a>
+    </p>
+  </div>
+</Default>

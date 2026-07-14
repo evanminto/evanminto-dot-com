@@ -1,0 +1,15 @@
+.a-social-link {
+  color: var(--color-blue);
+  display: inline-block;
+  font-weight: normal;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-blue-dark);
+  }
+}
+
+.a-social-link .a-svg-icon {
+  font-size: var(--font-size-xl);
+  margin-right: 0.125ch;
+}

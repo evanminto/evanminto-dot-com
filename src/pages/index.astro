@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import Default from '../layouts/Default.astro';
+import Cta from '../components/Cta.astro';
+import arrow from '../svg/arrow.svg?raw';
+
+const caseStudies = (await getCollection('case-studies')).sort((cs1, cs2) =>
+  cs1.data.sortOrder < cs2.data.sortOrder ? -1 : 1,
+);
+---
+
+<Default overlayHeader pageClass="home">
+  <div class="l-stack l-stack--xxl">
+    <div class="container">
+      <div class="intro theme-inverted">
+        <div class="intro__inner content-column content-column--lg">
+          <div class="intro__image">
+            <img
+              src="/images/headshot.jpg"
+              alt="Evan Minto smiling. He’s a young white man with medium-short wavy hair and gray plastic glasses."
+              width="1000"
+              height="1000"
+              class="headshot"
+            />
+          </div>
+
+          <div class="intro__main">
+            <h1 class="title title--page">
+              Hi, I’m <strong>Evan</strong>, a UX designer & web developer.
+            </h1>
+
+            <p>
+              I help organizations big and small tackle challenging problems
+              from concept to execution using modern design sensibilities,
+              cutting-edge web tech, and an emphasis on user research,
+              responsive design, and accessibility.
+            </p>
+
+            <p>
+              I co-founded the Y Combinator-backed manga startup Omoi and have
+              worked for Crunchyroll, The Internet Archive, Kodansha, COPIC,
+              GOGov, the San Francisco Art Institute, and many more.
+            </p>
+
+            <div class="intro__footer">
+              <p class="prompt">
+                <span>Got a project?</span>
+
+                <Cta href="/contact">Let’s Talk</Cta>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container l-stack l-stack--xl content-column content-column--lg">
+    {
+      caseStudies.map(({ slug, data }) => (
+        <article class="case-study-card-new case-study-card-new--alternating">
+          <img
+            class="case-study-card-new__image"
+            src={data.img.src}
+            alt={data.img.alt}
+            width={data.img.width}
+            height={data.img.height}
+          />
+
+          <div class="l-stack l-stack--sm">
+            <div class="l-stack l-stack--compact">
+              <h2 class="title title--card">{data.title}</h2>
+
+              <p>{data.summary}</p>
+            </div>
+
+            <div>
+              <Cta
+                href={`/case-studies/${slug}`}
+                class="case-study-card-new__cta"
+                rel="prefetch-intent"
+              >
+                View Case Study
+              </Cta>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</Default>

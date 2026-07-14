@@ -1,0 +1,8 @@
+.prompt {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+
+  > * + * {
+    margin-left: var(--space-xs);
+  }
+}

@@ -1,0 +1,107 @@
+---
+import Default from './Default.astro';
+import Markdown from '../components/Markdown.jsx';
+import Cta from '../components/Cta.astro';
+import CaseStudyMeta from '../components/CaseStudyMeta.astro';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  goals: any[];
+  problem: string;
+  role: string;
+  forWho: string;
+  platforms: string;
+  year: string;
+  image: { src: string; width: number; height: number };
+  url: string;
+}
+
+const { slug } = Astro.params;
+const {
+  title,
+  subtitle,
+  role,
+  forWho,
+  platforms,
+  year,
+  goals,
+  problem,
+  image,
+  url,
+} = Astro.props;
+---
+
+<Default title={title} pageClass="project">
+  <div class="content-column">
+    <div class="case-study">
+      {
+        image && (
+          <img
+            src={image?.src}
+            width={image.width}
+            height={image.height}
+            class="case-study__image"
+          />
+        )
+      }
+
+      <h1 class="title title--page">
+        {title}
+      </h1>
+
+      {subtitle && <p class="case-study__subtitle">{subtitle}</p>}
+
+      <CaseStudyMeta
+        role={role}
+        forWho={forWho}
+        platforms={platforms}
+        year={year}
+      />
+
+      {
+        url && (
+          <p>
+            <Cta href={url}>View Project</Cta>
+          </p>
+        )
+      }
+
+      {
+        problem && (
+          <>
+            <h2>Problem</h2>
+
+            <div>
+              <Markdown str={problem} />
+            </div>
+          </>
+        )
+      }
+
+      {
+        goals && (
+          <>
+            <h2>Goals</h2>
+
+            <ol>
+              {goals.map((goal) => (
+                <li>{goal}</li>
+              ))}
+            </ol>
+          </>
+        )
+      }
+
+      <slot />
+
+      {
+        url && (
+          <p>
+            <Cta href={url}>View Project</Cta>
+          </p>
+        )
+      }
+    </div>
+  </div>
+</Default>

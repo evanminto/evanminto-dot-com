@@ -1,0 +1,21 @@
+.m-post-header {
+  position: relative;
+
+  .a-timestamp {
+    color: var(--color-blue);
+  }
+}
+
+.m-post-header > * {
+  --flow-gap-self: var(--space-sm);
+}
+
+.m-post-header h1 a {
+  text-decoration: none;
+  transform: none;
+}
+
+.m-post-header address {
+  display: flex;
+  font-style: normal;
+}

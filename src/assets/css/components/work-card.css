@@ -1,0 +1,14 @@
+.m-work-card {
+  display: block;
+  background: var(--color-blue);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: var(--space-lg) var(--space-md);
+  border-radius: var(--border-radius-lg);
+  width: 100%;
+  text-align: center;
+
+  &:hover {
+    color: var(--color-off-white);
+  }
+}

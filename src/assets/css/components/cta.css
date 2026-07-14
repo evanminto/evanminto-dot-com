@@ -1,0 +1,62 @@
+.cta {
+  /* Approximation of how tall the font looks, based on cap height */
+  --svg__font-visual-height: 0.7em;
+  /* Larger than the surrounding text by default */
+  --svg__size: 1.125em;
+  /* Center relative to nearby text */
+  --svg__align: calc((var(--svg__font-visual-height) - var(--svg__size)) / 2);
+
+  display: inline-block;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cta__icon {
+  display: inline-block;
+  width: var(--svg__size);
+  height: var(--svg__size);
+  transition: width 400ms ease-in-out;
+  position: relative;
+  vertical-align: -0.25em;
+
+  svg {
+    display: inline-block;
+    width: var(--svg__size);
+    height: var(--svg__size);
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    stroke: currentColor;
+    transition:
+      opacity 250ms ease-in-out,
+      left 250ms ease-in-out 120ms;
+
+    &:last-of-type {
+      width: 3.43rem;
+      max-width: none;
+      opacity: 0;
+    }
+  }
+}
+
+.cta:hover {
+  svg {
+    opacity: 0;
+    left: 1.25rem;
+    transition:
+      opacity 250ms ease-in-out 120ms,
+      left 250ms ease-in-out;
+
+    &:last-of-type {
+      opacity: 1;
+      left: 0;
+    }
+  }
+
+  .cta__icon {
+    width: 3.43rem;
+  }
+}

@@ -1,0 +1,43 @@
+.m-blog-cta::before,
+.m-blog-cta::after {
+  content: '';
+  display: table;
+}
+
+.m-blog-cta::after {
+  clear: both;
+}
+
+.m-blog-cta > * {
+  --flow-gap: var(--space-sm);
+}
+
+.m-blog-cta > img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 40em) {
+  .m-blog-cta > img {
+    float: left;
+    margin-bottom: var(--flow-gap);
+    margin-right: var(--space-md);
+    shape-margin: var(--space-md);
+    shape-outside: border-box;
+  }
+
+  .m-blog-cta > img + h1,
+  .m-blog-cta > img + h2,
+  .m-blog-cta > img + h3,
+  .m-blog-cta > img + h4,
+  .m-blog-cta > img + h5,
+  .m-blog-cta > img + h6 {
+    --flow-gap: 0;
+  }
+
+  @supports (shape-outside: border-box) {
+    .m-blog-cta > img ~ * {
+      padding-left: var(--space-xl);
+    }
+  }
+}

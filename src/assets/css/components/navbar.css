@@ -1,0 +1,18 @@
+.m-navbar ul {
+  --list-before-content: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.m-navbar ul > * {
+  --flow-gap: var(--space-sm);
+
+  margin: calc(var(--flow-gap) / 4) calc(var(--flow-gap) / 2);
+  padding: 0;
+}
+
+.m-navbar ul > :last-child {
+  margin-right: 0;
+}

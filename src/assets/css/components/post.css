@@ -1,0 +1,19 @@
+.o-post {
+  position: relative;
+}
+
+.o-post > * {
+  --flow-gap: var(--space-md);
+}
+
+.o-post::after {
+  content: '';
+
+  background: var(--color-blue);
+  border-radius: var(--border-radius-md);
+  display: block;
+  height: var(--space-xs);
+  margin: var(--space-lg) auto 0 auto;
+  max-width: 100%;
+  width: calc(15% + 5rem);
+}

@@ -1,0 +1,26 @@
+.m-about-me {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(var(--space-md) * 18);
+  text-align: center;
+}
+
+.m-about-me > * {
+  --flow-gap: var(--space-sm);
+}
+
+.m-about-me h1 {
+  --flow-gap: var(--space-md);
+
+  margin-top: var(--flow-gap);
+}
+
+.m-about-me .a-headshot {
+  --flow-gap: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+  order: -1;
+}

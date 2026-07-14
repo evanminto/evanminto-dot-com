@@ -1,0 +1,43 @@
+.m-post-body {
+  padding-top: var(--space-md);
+  position: relative;
+
+  img,
+  pre,
+  codepen-embed {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-image);
+  }
+}
+
+.m-post-body::before {
+  content: '';
+
+  display: block;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+
+  border-bottom: var(--border-width-sm) dotted var(--color-blue);
+}
+
+.m-post-body img {
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 66.667vh;
+}
+
+.m-post-body iframe {
+  border-radius: var(--border-radius-md);
+  height: calc(15rem + 20vh);
+}
+
+.m-post-body h2,
+.m-post-body h3,
+.m-post-body h4,
+.m-post-body h5,
+.m-post-body h6 {
+  --flow-gap-self: var(--space-lg);
+}

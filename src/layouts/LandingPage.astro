@@ -1,0 +1,26 @@
+---
+import Default from './Default.astro';
+
+interface Props {
+  title: string;
+  showTitle?: boolean;
+  pageDescription?: string | string[];
+}
+
+const { title, showTitle, pageDescription } = Astro.props;
+---
+
+<Default title={title}>
+  <div class="content-column">
+    {title && showTitle !== false && <h1 class="title title--page">{title}</h1>}
+    {
+      pageDescription &&
+        ('map' in pageDescription ? (
+          pageDescription.map((text) => <p>{text}</p>)
+        ) : (
+          <p>{{ pageDescription }}</p>
+        ))
+    }
+    <slot />
+  </div>
+</Default>

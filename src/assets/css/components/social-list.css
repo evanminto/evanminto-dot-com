@@ -1,0 +1,14 @@
+.m-social-list {
+  --list-before-content: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.m-social-list > * {
+  --flow-gap: var(--space-sm);
+
+  margin: calc(var(--flow-gap) / 2);
+  padding: 0;
+}

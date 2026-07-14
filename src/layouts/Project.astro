@@ -1,0 +1,24 @@
+---
+import Default from './Default.astro';
+import ProjectComponent from '../components/Project.jsx';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  startDate: string;
+  endDate: string;
+  detail: string;
+  content: string;
+  img: {
+    src: string;
+    alt: string;
+  };
+  viewUrl: string;
+  gallery: any;
+}
+
+const { title, subtitle, startDate, endDate, detail, content, img, viewUrl } = Astro.props;
+---
+<Default title={title} pageClass='project'>
+  <ProjectComponent title={title} subtitle={subtitle} startDate={startDate} endDate={endDate} detail={detail} description={content} img={img} viewUrl={viewUrl} />
+</Default>

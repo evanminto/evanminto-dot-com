@@ -1,0 +1,8 @@
+.p-blog-post {
+  --content-max-width: var(--content-max-width-sm);
+}
+
+.p-blog-post main {
+  max-width: var(--content-max-width);
+  padding-inline: var(--space-md);
+}

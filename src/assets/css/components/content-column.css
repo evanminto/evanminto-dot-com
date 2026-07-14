@@ -1,0 +1,9 @@
+.content-column {
+  margin-inline: auto;
+  max-width: var(--content-max-width);
+  padding: 0 var(--space-md);
+}
+
+.content-column--lg {
+  max-width: var(--content-max-width-lg);
+}

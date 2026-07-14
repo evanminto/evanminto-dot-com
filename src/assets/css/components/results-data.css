@@ -1,0 +1,17 @@
+.m-results-data {
+  --l-sidebar__main-min-size: 75%;
+  align-items: center;
+  gap: 0 var(--space-sm);
+}
+
+@container layout (inline-size > 40rem) {
+  .m-results-data {
+    align-items: baseline;
+  }
+}
+
+.m-results-data strong {
+  font-size: var(--font-size-xl);
+  color: var(--color-orange-dark);
+  margin-inline: auto;
+}

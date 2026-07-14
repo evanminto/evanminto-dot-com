@@ -1,0 +1,26 @@
+.p-home {
+  .a-logo-link__first {
+    color: var(--color-orange);
+
+    &::after {
+      bottom: var(--space-xxxs);
+      content: '';
+      display: block;
+      left: var(--padding-link);
+      position: absolute;
+      width: 100%;
+      height: 0.175em;
+      background: currentColor;
+      opacity: 0;
+      view-transition-name: current-page;
+    }
+  }
+
+  .a-logo-link:hover {
+    color: var(--color-orange);
+
+    .a-logo-link__first {
+      color: var(--color-white);
+    }
+  }
+}

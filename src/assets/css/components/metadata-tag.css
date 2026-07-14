@@ -1,0 +1,13 @@
+.a-metadata-tag {
+  font-size: var(--font-size-sm);
+}
+
+.a-metadata-tag > * {
+  --flow-gap: 0;
+  display: block;
+}
+
+.a-metadata-tag__value {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}

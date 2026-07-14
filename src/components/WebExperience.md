@@ -1,0 +1,7 @@
+- **[Omoi](https://www.omoi.com)** – Co-Founder/Design & Web Lead, 2021 to Present. UI/UX design, user research, design system, marketing design, HTML, CSS, JavaScript, NodeJS, Web Components, Lit, Sass, PHP.
+- **[GOGov](https://www.gogovapps.com)** – Full-Stack Engineer, UX Designer, & Accessibility Consultant, 2023 to 2026. JavaScript, PHP, Ruby, React, HTML, CSS.
+- **[Kodansha](https://kodansha.us)** – Full-Stack Engineer, 2018 to 2021. HTML, CSS, JavaScript, PHP, WordPress, Ruby on Rails, React, Preact, user research.
+- **[BlockPunk](https://blockpunk.net)** – Product Consultant & Web Developer, 2019 to 2020. HTML, CSS, JavaScript, React, NextJS, user research.
+- **[Promare Title Generator](https://promaretitlegenerator.com/)** – Side Project, 2019. HTML, CSS, JavaScript, Eleventy, Web Components, Lit.
+- **[The Internet Archive](https://archive.org)** – Software Engineer & Designer, 2017 – 2018. PHP, HTML, CSS, JavaScript, React, Less, user research.
+- **[Crunchyroll](https://crunchyroll.com)** – Software Engineer, 2013 to 2017. HTML, CSS, JavaScript, Eleventy, Web Components, Lit.

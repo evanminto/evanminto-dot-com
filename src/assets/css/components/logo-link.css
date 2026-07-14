@@ -1,0 +1,25 @@
+.a-logo-link {
+  display: block;
+  position: relative;
+
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  letter-spacing: -0.0625ch;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 250ms ease-in-out;
+
+  color: inherit;
+
+  @media screen and (width > 40rem) {
+    font-size: var(--font-size-lg);
+  }
+
+  &:hover {
+    color: var(--color-white);
+  }
+}
+
+.a-logo-link__first {
+  transition: color 250ms ease-in-out;
+}

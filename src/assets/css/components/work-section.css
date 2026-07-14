@@ -1,0 +1,43 @@
+.work-section {
+  & summary {
+    background: var(--color-blue-light);
+    color: var(--color-black-100);
+    cursor: default;
+    padding: var(--space-sm);
+    border-radius: var(--border-radius-md);
+    list-style: none;
+    position: sticky;
+    inset-block-start: var(--space-sm);
+    z-index: 1;
+
+    transition: background-color 250ms ease-out, color 250ms ease-out;
+
+    &:hover {
+      @media (any-hover: hover) {
+        background: var(--color-blue-dark);
+        color: var(--color-white);
+      }
+    }
+
+    > * {
+      filter: var(--drop-shadow-contrast);
+    }
+  }
+
+  & h2 {
+
+    display: flex;
+    font-family: var(--font-family-body);
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+
+    &::after {
+      content: '+';
+      margin-left: auto;
+    }
+  }
+
+  & details[open] h2::after {
+    content: '–';
+  }
+}

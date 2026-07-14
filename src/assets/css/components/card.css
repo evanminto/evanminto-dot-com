@@ -1,0 +1,68 @@
+.m-card {
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-card);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--duration-x-short) ease-out;
+
+  &:hover {
+    transform: translateY(-0.125rem);
+  }
+}
+
+.m-card a,
+.m-card button {
+  position: relative;
+  z-index: 2;
+}
+
+.m-card a {
+  color: var(--color-black);
+  position: var(--card-link-position, relative);
+
+  &:hover {
+    color: var(--color-blue);
+  }
+}
+
+.m-card h1,
+.m-card h2,
+.m-card h3,
+.m-card h4,
+.m-card h5,
+.m-card h6 {
+  --card-link-pseudo-content: '';
+  --card-link-position: static;
+}
+
+.m-card h1 a,
+.m-card h2 a,
+.m-card h3 a,
+.m-card h4 a,
+.m-card h5 a,
+.m-card h6 a {
+  display: block;
+  text-decoration: none;
+  transform: none;
+}
+
+.m-card a::after,
+.m-card a::after,
+.m-card a::after,
+.m-card a::after,
+.m-card a::after,
+.m-card a::after {
+  content: var(--card-link-pseudo-content);
+
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  z-index: 1;
+
+  margin: 0;
+}

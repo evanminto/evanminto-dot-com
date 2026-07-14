@@ -1,0 +1,27 @@
+.u-visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.u-visually-hidden:first-child + * {
+  --flow-gap-self: 0;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-reorder-first {
+  order: -1 !important;
+}
+
+.u-shadow-image {
+  filter: var(--filter-shadow-image);
+}
+
+.u-border-radius-lg {
+  border-radius: var(--border-radius-lg);
+}

@@ -1,0 +1,14 @@
+.m-inline-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.m-inline-list > * {
+  margin: 0;
+}
+
+.m-inline-list > * + *::before {
+  content: '•';
+  margin-left: 1ch;
+  margin-right: 1ch;
+}

@@ -1,0 +1,8 @@
+.m-contact-teaser {
+  text-align: center;
+}
+
+.m-contact-teaser > * {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,3 @@
+.d-wide {
+  --content-max-width: var(--content-max-width-lg);
+}

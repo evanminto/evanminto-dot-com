@@ -1,0 +1,74 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import site from '../data/site.json' assert { type: 'json' };
+import nav from '../data/nav.json' assert { type: 'json' };
+import SiteHeader from '../components/SiteHeader.jsx';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../assets/css/main.css';
+
+interface Props {
+  title?: string;
+  widePage?: boolean;
+  pageClass?: string;
+  overlayHeader?: boolean;
+}
+
+const {
+  title,
+  widePage = false,
+  pageClass,
+  overlayHeader = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html
+  id="root"
+  class={widePage ? 'd-wide' : undefined}
+  transition:animate="initial"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {title && `${title} - `}Evan Minto
+    </title>
+
+    <ViewTransitions fallback="none" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Evan Minto"
+      href="/feed/blog.xml"
+    />
+
+    <script src="../assets/js/application.js"></script>
+    <script src="../assets/js/codepen-embed.js"></script>
+  </head>
+
+  <body class={pageClass ? `p-${pageClass}` : undefined}>
+    <a href="#main_content" class="a-skip-link">Skip to Main Content</a>
+    <SiteHeader
+      pageUrl={Astro.url.pathname}
+      siteName={site.name}
+      navLinks={nav}
+      overlay={overlayHeader}
+    />
+
+    <main id="main_content" style={overlayHeader ? 'margin: 0;' : ''}>
+      {
+        widePage ? (
+          <div class="l-switcher">
+            <slot />
+          </div>
+        ) : (
+          <slot />
+        )
+      }
+    </main>
+
+    <SiteFooter />
+  </body>
+</html>

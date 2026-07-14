@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import dayjs from 'dayjs';
+import Default from '../../layouts/Default.astro';
+import { Content as WritingExperience } from '../../components/WritingExperience.md';
+
+const posts = await getCollection('blog');
+const reversedPosts = [...posts].reverse();
+const title = 'Posts';
+---
+
+<Default title={title}>
+  <div class="content-column">
+    <h1>{title}</h1>
+
+    <ul class="l-grid">
+      {
+        reversedPosts.map(({ data, slug }) => (
+          <li>
+            <article class="m-card">
+              <div class="m-summary">
+                <header>
+                  <h2 class="title title--card-sm">
+                    <a href={`/blog/${slug}`} rel="prefetch-intent">
+                      {data.title}
+                    </a>
+                  </h2>
+
+                  <p class="m-summary__timestamp">
+                    <time>{dayjs(data.date).format('MMMM D, YYYY')}</time>
+                  </p>
+                </header>
+
+                <p>{data.description}</p>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="l-stack l-stack--sm">
+      <h2 class="title title--section">Additional Writing</h2>
+      <WritingExperience />
+    </div>
+  </div>
+</Default>

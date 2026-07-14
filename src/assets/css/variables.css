@@ -1,0 +1,138 @@
+:root {
+  --color-h-blue: 256;
+
+  --color-blue: #4900e5;
+  --color-blue-light: #4900e5;
+  --color-blue-dark: rgb(39, 0, 145);
+  --color-orange: #dfff0b;
+  --color-orange-dark: #dfff0b;
+  --color-off-white: hsl(var(--color-h-blue), 20%, 93%);
+  --color-off-white-2: hsl(var(--color-h-blue), 15%, 96%);
+  --color-white: white;
+  --color-black-100: black;
+  --color-black: hsl(var(--color-h-blue), 50%, 7%);
+  --color-gray: hsl(var(--color-h-blue), 10%, 45%);
+  --color-gray-shadow: hsl(var(--color-h-blue), 10%, 85%);
+  --color-shadow: hsla(var(--color-h-blue), 50%, 7%, 0.167);
+
+  --color-background: var(--color-white);
+  --color-text-1: var(--color-black);
+  --color-text-2: var(--color-gray);
+  --color-link: var(--color-blue);
+  --color-link-hover: var(--color-blue-dark);
+  --color-link-focus: var(--color-link-hover);
+  --color-link-active: var(--color-link-hover);
+  --color-link-decoration: currentColor;
+
+  --font-family-body: 'Hind', 'Hind', 'Helvetica Neue', 'Helvetica', 'Arial',
+    sans-serif;
+  --font-family-display: 'Patua One', 'Hind', 'Helvetica Neue', 'Helvetica',
+    'Arial', sans-serif;
+  --font-family-monospace: monospace;
+
+  --font-scale: 1.25;
+  --font-size-md: calc(0.9rem + 0.2vw + 0.2vh);
+  --font-size-sm: calc(var(--font-size-md) / var(--font-scale));
+  --font-size-lg: calc(var(--font-size-md) * var(--font-scale));
+  --font-size-xl: calc(var(--font-size-lg) * var(--font-scale));
+  --font-size-xxl: calc(var(--font-size-xl) * var(--font-scale));
+  --font-size-xxxl: calc(var(--font-size-xxl) * var(--font-scale));
+
+  --font-size-smaller: calc(1em / var(--font-scale));
+  --font-size-larger: calc(1em * var(--font-scale));
+
+  --measure: 80ch;
+  --line-height: 1.667;
+  --line-height-display: 1.15;
+
+  --space-md: calc(var(--line-height) * var(--font-size-md));
+  --space-sm: calc(var(--space-md) / 1.5);
+  --space-xs: calc(var(--space-sm) / 2);
+  --space-xxs: calc(var(--space-xs) / 2.5);
+  --space-xxxs: calc(var(--space-xs) / 3);
+  --space-lg: calc(var(--space-md) * 1.5);
+  --space-xl: calc(var(--space-md) * 2);
+  --space-xxl: calc(var(--space-md) * 2.5);
+  --space-xxxl: calc(var(--space-md) * 3);
+
+  --border-width-sm: 0.0625rem;
+  --border-width-md: 0.125rem;
+  --border-white-sm: 0.125rem solid var(--color-white);
+  --border-radius-md: 0.25rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xxl: 4rem;
+  --border-radius-convex-down: 0 0 100% 100% / 0 0 calc(10px + 5vw)
+    calc(10px + 5vw);
+  --border-radius-convex-up: 100% 100% 0 0 / calc(10px + 5vw) calc(10px + 5vw) 0
+    0;
+
+  --box-shadow-inner-bottom: 0 -5rem 15rem hsla(0, 0%, 0%, 0.5) inset;
+  --box-shadow-inner-top: 0 2.5rem 7.5rem hsla(0, 0%, 0%, 0.5) inset;
+  --box-shadow-hard: var(--space-xs) var(--space-xs) var(--color-gray-shadow);
+  --box-shadow-hard-sm: var(--space-xxs) var(--space-xxs)
+    var(--color-gray-shadow);
+
+  --box-shadow-image: 1px 1px 60px 0px rgba(0, 0, 0, 0.06),
+    2px 2px 9px 0px rgba(0, 0, 0, 0.1), -2px 2px 20px 0px rgba(0, 0, 0, 0.07);
+  --filter-shadow-image: drop-shadow(1px 1px 60px rgba(0, 0, 0, 0.06))
+    drop-shadow(2px 2px 9px rgba(0, 0, 0, 0.1))
+    drop-shadow(-2px 2px 20px rgba(0, 0, 0, 0.07));
+  --box-shadow-card: 1px 1px 8px 0px rgba(0, 0, 0, 0.04),
+    1px 1px 2px 0px rgba(0, 0, 0, 0.17), -1px 1px 2px 0px rgba(0, 0, 0, 0.04);
+  --drop-shadow-contrast: drop-shadow(0 0 30px hsl(0deg 0% 100% / 0.25));
+  --drop-shadow-contrast-dark: drop-shadow(0 0 30px hsl(0deg 0% 0% / 0.25));
+
+  --timing-function-bounce: cubic-bezier(0.54, 0.47, 0.34, 2.32);
+  --duration-x-short: 125ms;
+  --duration-short: 250ms;
+  --duration-medium: 400ms;
+  --duration-long: 850ms;
+
+  --content-max-width-sm: calc(var(--space-md) * 28);
+  --content-max-width: calc(var(--space-md) * 40);
+
+  --content-max-width-lg: calc(var(--space-md) * 48);
+
+  --background-purple-fallback: var(--color-blue);
+  --background-purple-image: linear-gradient(
+      151deg,
+      rgba(255, 255, 255, 0.1) 15.21%,
+      rgba(0, 0, 0, 0.1) 84.76%
+    ),
+    url('/images/noise.svg');
+  --background-purple-blend-mode: luminosity, normal, normal;
+}
+
+@media only screen and (min-width: 40em) {
+  :root {
+    --font-scale: 1.333;
+  }
+}
+
+@media only print {
+  :root {
+    --font-size-md: 1rem;
+  }
+}
+
+.theme-inverted,
+.theme-inverted-overlay-only {
+  --color-background: var(--background-blue);
+  --color-text-1: var(--color-white);
+  --color-text-2: var(--color-off-white);
+  --color-link: var(--color-orange);
+  --color-link-hover: var(--color-orange);
+  --color-link-focus: var(--color-orange);
+  --color-link-active: var(--color-orange);
+
+  color: var(--color-text-1);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.theme-inverted {
+  background-color: var(--color-blue);
+  background-image: var(--background-purple-image);
+  background-blend-mode: var(--background-purple-blend-mode);
+  mix-blend-mode: multiply;
+}

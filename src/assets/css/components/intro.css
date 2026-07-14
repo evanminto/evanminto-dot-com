@@ -1,0 +1,78 @@
+.intro {
+  position: relative;
+
+  mask: url('/images/wave-bottom.svg');
+
+  @supports not (mask-mode: luminance) {
+    mask: url('/images/wave-bottom-chrome.svg');
+  }
+
+  mask-mode: luminance;
+}
+
+.intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding-block: var(--space-xxxl) var(--space-xxl);
+
+  > * {
+    margin: 0;
+  }
+
+  p,
+  .title {
+    filter: var(--drop-shadow-contrast);
+  }
+
+  a {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+
+    filter: var(--drop-shadow-contrast-dark);
+  }
+
+  .title {
+    text-align: center;
+
+    strong {
+      font-weight: inherit;
+      color: var(--color-orange);
+    }
+  }
+
+  @container (inline-size > 52rem) {
+    flex-direction: row;
+    gap: var(--space-lg);
+
+    .title {
+      text-align: start;
+    }
+
+    .intro__image {
+      order: 1;
+      max-width: min(33.333cqi, 20rem);
+    }
+  }
+}
+
+.intro__image {
+  margin: auto;
+  max-width: 12rem;
+
+  @container (inline-size > 45rem) {
+    max-width: 15rem;
+  }
+}
+
+.intro__main {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+
+  > * {
+    max-width: 52rem;
+  }
+}

@@ -1,0 +1,15 @@
+.case-study {
+  > .l-sidebar {
+    --l-sidebar__main-min-size: 66.667%;
+    --l-sidebar__size: 15rem;
+  }
+}
+
+.case-study__image {
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-image);
+}
+
+.case-study__subtitle {
+  font-size: var(--font-size-lg);
+}

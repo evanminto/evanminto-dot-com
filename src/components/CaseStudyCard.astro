@@ -1,0 +1,32 @@
+---
+type Props = {
+  title: string;
+  slug: string;
+  subtitle: string;
+  url: string;
+  image: { src: string; width: number; height: number };
+};
+
+const { title, slug, subtitle, url, image } = Astro.props;
+---
+
+<article class="case-study-card m-card l-stack">
+  <img
+    src={image.src}
+    height={image.height}
+    width={image.width}
+    loading="lazy"
+  />
+
+  <div class="case-study-card__text l-stack__fill">
+    <h3 class="title title--card-sm">
+      <a href={url} rel="prefetch-intent">
+        {title}
+      </a>
+    </h3>
+
+    <p>
+      {subtitle}
+    </p>
+  </div>
+</article>

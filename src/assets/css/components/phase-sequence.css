@@ -1,0 +1,83 @@
+.o-phase-sequence {
+  --o-phase-sequence__color: var(--color-gray);
+  --o-phase-sequence__gap: var(--space-lg);
+  --o-phase-sequence__tick-size: 1rem;
+  --o-phase-sequence__tick-border-ratio: .125;
+  --o-phase-sequence__tick-box-size: calc((1 + 2 * var(--o-phase-sequence__tick-border-ratio)) * var(--o-phase-sequence__tick-size));
+
+  > * {
+    --flow-gap: 0;
+
+    --o-phase-sequence__tick-inset: calc(var(--o-phase-sequence__gap) + var(--font-size-xl) * 1.333 / 2 - var(--o-phase-sequence__tick-box-size) / 2);
+    --o-phase-sequence__line-inset: calc(var(--o-phase-sequence__tick-inset) + var(--o-phase-sequence__tick-box-size) / 2);
+    --o-phase-sequence__line-height: 100%;
+
+    padding-block-start: var(--o-phase-sequence__gap);
+    padding-inline-start: var(--space-md);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      background: var(--o-phase-sequence__color);
+      display: block;
+    }
+
+    /** Line */
+    &::before {
+
+      width: .125rem;
+      height: 100%;
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+    }
+
+    /** Tick */
+    &::after {
+      width: var(--o-phase-sequence__tick-box-size);
+      height: var(--o-phase-sequence__tick-box-size);
+      border-radius: var(--o-phase-sequence__tick-box-size);
+      border: calc(var(--o-phase-sequence__tick-size) * var(--o-phase-sequence__tick-border-ratio)) solid var(--color-off-white);
+      position: absolute;
+      /* inset-block-start: calc(var(--o-phase-sequence__gap)  + var(--font-size-xl) * .7 - var(--o-phase-sequence__tick-box-size) * .5); */
+      inset-block-start: var(--o-phase-sequence__tick-inset);
+      inset-inline-start: calc(-.45 * var(--o-phase-sequence__tick-box-size));
+    }
+  }
+
+  > :first-child {
+    --o-phase-sequence__gap: 0rem;
+
+    &::before {
+      height: calc(100% - var(--o-phase-sequence__line-inset));
+      inset-block-start: var(--o-phase-sequence__line-inset);
+    }
+
+    /* --o-phase-sequence__tick-inset: calc(var(--o-phase-sequence__gap) + var(--font-size-xl) * 0.4);
+    --o-phase-sequence__line-inset: calc(var(--o-phase-sequence__tick-inset) + var(--o-phase-sequence__tick-box-size) / 2);
+
+    padding-block-start: 0; */
+
+    /* &::before {
+
+      height: calc(100% - var(--o-phase-sequence__line-inset));
+      inset-block-start: var(--o-phase-sequence__line-inset);
+    }
+
+    &::after {
+      inset-block-start: var(--o-phase-sequence__tick-inset);
+    } */
+  }
+
+  > :last-child {
+    &::before {
+      height: var(--o-phase-sequence__line-inset);
+    }
+
+    &::after {
+      background: var(--color-off-white);
+      border-color: var(--o-phase-sequence__color);
+    }
+  }
+}

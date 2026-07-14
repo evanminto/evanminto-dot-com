@@ -1,0 +1,13 @@
+---
+import MetadataTag from '../components/MetadataTag.jsx';
+
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+
+<ol>
+  {items.map((item) => <li>{item}</li>)}
+</ol>

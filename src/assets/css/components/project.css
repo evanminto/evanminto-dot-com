@@ -1,0 +1,21 @@
+.o-project {
+  & > * + * {
+    /* HACK */
+    margin-top: var(--space-sm);
+  }
+
+  & > header > * {
+    --flow-gap-self: 0;
+  }
+
+  & img {
+    border-radius: var(--border-radius-lg);
+    width: 100%;
+    max-width: max-content;
+    margin-inline: auto;
+  }
+}
+
+.o-project__subtitle {
+  color: var(--color-orange-dark);
+}

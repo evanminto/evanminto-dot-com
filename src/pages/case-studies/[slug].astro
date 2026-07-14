@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import CaseStudy from '../../layouts/CaseStudy.astro';
+import Problem from '../../components/Problem.jsx';
+import Phase from '../../components/Phase.jsx';
+import ResultsData from '../../components/ResultsData.jsx';
+import Markdown from '../../components/Markdown.jsx';
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('case-studies');
+
+  return caseStudies.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { title, summary, goals, img, role, for: forWho, platforms, year, problem, sections, url } = entry.data;
+const fullTitle = `Case Study: ${title}`;
+---
+<CaseStudy
+  title={fullTitle}
+  subtitle={summary}
+  image={img}
+  problem={problem}
+  goals={goals}
+  role={role}
+  forWho={forWho}
+  platforms={platforms}
+  year={year}
+  url={url}
+>
+  {sections.map(({ title, content, image }) => <>
+    {image && <img class="u-border-radius-lg u-shadow-image" src={image.src} alt={image.alt} width={image.width} height={image.height} />}
+    <h2>{title}</h2>
+    <Markdown str={content} />
+  </>)}
+</CaseStudy>

@@ -1,0 +1,75 @@
+---
+import LandingPage from '../layouts/LandingPage.astro';
+import { getCollection } from 'astro:content';
+import LandingPage from '../layouts/LandingPage.astro';
+import ProjectCard from '../components/ProjectCard.jsx';
+import { Content as SpeakingExperience } from '../components/SpeakingExperience.md';
+import { Content as MusicExperience } from '../components/MusicExperience.md';
+import * as more from '../content/landing-pages/more.md';
+
+const { Content, frontmatter } = more;
+const { title } = frontmatter;
+
+const byNewestFirst = (e1, e2) => (e1.data.endDate > e2.data.endDate ? -1 : 1);
+
+const caseStudies = await getCollection('case-studies');
+const games = [...(await getCollection('games'))].sort(byNewestFirst);
+const artProjects = [...(await getCollection('art'))].sort(byNewestFirst);
+---
+
+<LandingPage title={title}>
+  <div class="l-stack l-stack--xl">
+    <Content />
+
+    <section>
+      <h2>Game Design</h2>
+
+      <ul class="l-masonry-horizontal">
+        {
+          games.map(({ data }) => (
+            <li
+              style={`--l-masonry-horizontal__ratio: ${data.img.width} / ${data.img.height};`}
+            >
+              <ProjectCard
+                title={data.title}
+                url={data.viewUrl}
+                img={data.img}
+                class="l-masonry-horizontal__content"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h2>Art</h2>
+
+      <ul class="l-masonry-horizontal">
+        {
+          artProjects.map(({ data }) => (
+            <li
+              style={`--l-masonry-horizontal__ratio: ${data.img.width} / ${data.img.height};`}
+            >
+              <ProjectCard
+                url={data.viewUrl}
+                img={data.img}
+                class="l-masonry-horizontal__content"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h2>Speaking</h2>
+      <SpeakingExperience />
+    </section>
+
+    <section>
+      <h2>Music</h2>
+      <MusicExperience />
+    </section>
+  </div>
+</LandingPage>

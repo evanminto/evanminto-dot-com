@@ -1,0 +1,6 @@
+.a-skip-link {
+  background: var(--color-white);
+  border-radius: 0;
+  padding: var(--space-xs) var(--space-md);
+  text-shadow: none;
+}

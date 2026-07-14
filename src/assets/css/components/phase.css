@@ -1,0 +1,9 @@
+.m-phase {
+  > * {
+    --flow-gap: var(--space-sm);
+  }
+
+  & img {
+    border-radius: var(--border-radius-lg);
+  }
+}

@@ -1,0 +1,7 @@
+.a-svg-icon {
+  height: var(--font-size-larger);
+}
+
+.a-svg-icon__alt-color {
+  fill: var(--svg-alt-color, currentColor);
+}

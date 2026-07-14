@@ -1,0 +1,19 @@
+---
+import MetadataTag from '../components/MetadataTag.jsx';
+
+interface Props {
+  role: string;
+  forWho: string;
+  platforms: string;
+  year: string;
+}
+
+const { role, forWho, platforms, year } = Astro.props;
+---
+
+<div class="l-grid case-study-meta">
+  {role && <MetadataTag name="Role">{role}</MetadataTag>}
+  {forWho && <MetadataTag name="For">{forWho}</MetadataTag>}
+  {platforms && <MetadataTag name="Platforms">{platforms}</MetadataTag>}
+  {year && <MetadataTag name="Year">{year}</MetadataTag>}
+</div>
