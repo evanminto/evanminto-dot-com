@@ -93,6 +93,7 @@ p {
 
 img {
   object-position: var(--focal-point, center);
+  animation: blur-fade-down 500ms ease-out;
 }
 
 h1,

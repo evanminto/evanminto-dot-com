@@ -9,6 +9,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
+  @media (prefers-reduced-motion) {
+    animation-duration: 0s;
+  }
 }
 
 * + * {

@@ -7,16 +7,16 @@ img:
   width: 1000
   height: 837
 
-title: Azuki Manga Reader
+title: Omoi Manga Reader
 summary: Designed and built an interactive comic reader with multiple reading modes
 
 role: Lead UX Designer & Lead Web Developer
-for: Azuki
+for: Omoi (called Azuki at the time)
 platforms: Web, iOS, and Android
 year: 2021
-url: https://www.azuki.co/series/attack-on-titan/read/ffc78700-79ec-45d8-834f-82a3d8cc1384
+url: https://www.omoi.com/series/attack-on-titan/read/ffc78700-79ec-45d8-834f-82a3d8cc1384
 
-problem: Azuki was launching our cross-platform manga subscription app, and we needed a way for fans to read their favorite manga. Users would spend the majority of their time in the app reading, so the reader would need to be a comfortable experience that kept them coming back.
+problem: Omoi was launching our cross-platform manga subscription app, and we needed a way for fans to read their favorite manga. Users would spend the majority of their time in the app reading, so the reader would need to be a comfortable experience that kept them coming back.
 
 goals:
   - Prioritize content and get users to their manga fast
@@ -58,7 +58,7 @@ sections:
     content: |
       I then proceeded to implement the new designs in the web app, and added extensive Google Analytics events to track which reading modes and navigation methods users most often used.
 
-      Azuki’s iOS and Android developers worked off of my cross-platform designs in Figma to build their respective readers as well.
+      Omoi’s iOS and Android developers worked off of my cross-platform designs in Figma to build their respective readers as well.
     image:
       src: /images/projects/azuki.jpg
       alt: A web-based manga reader showing two pages of the series To Your Eternity.
@@ -66,7 +66,7 @@ sections:
       height: 837
   - title: Results
     content: |
-      The reader is live on all three platforms now, and it has become one of our most lauded features. Anime and manga review website YattaTachi said “[Azuki’s] web reader is one of the best out there.”
+      The reader is live on all three platforms now, and it has become one of our most lauded features. Anime and manga review website YattaTachi said “[Omoi’s] web reader is one of the best out there.”
 
       Mobile web readership has consistently been a key growth driver for the app.
 ---
