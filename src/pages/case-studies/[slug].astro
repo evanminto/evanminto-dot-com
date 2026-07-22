@@ -1,23 +1,83 @@
 ---
 import { getCollection } from 'astro:content';
 import CaseStudy from '../../layouts/CaseStudy.astro';
-import Problem from '../../components/Problem.jsx';
-import Phase from '../../components/Phase.jsx';
-import ResultsData from '../../components/ResultsData.jsx';
+import { ContentEntryModule } from 'astro';
+import CaseStudySection from '../../components/CaseStudySection.astro';
 import Markdown from '../../components/Markdown.jsx';
+
+interface Props {
+  entry: ContentEntryModule & {
+    data: {
+      title: string;
+      summary: string;
+      goals: string[];
+      img: {
+        src: string;
+        src_2x?: string;
+        alt: string;
+        width: number;
+        height: number;
+        shadow?: 'box' | 'shaped';
+      };
+      role: string;
+      for: string;
+      platforms: string;
+      year: string;
+      problem: string;
+      password?: string;
+      sections: {
+        title: string;
+        image: {
+          src: string;
+          src_2x?: string;
+          alt: string;
+          width?: number;
+          height?: number;
+          shadow?: 'box' | 'shaped';
+        };
+        images: {
+          src: string;
+          src_2x?: string;
+          alt: string;
+          width?: number;
+          height?: number;
+          shadow?: 'box' | 'shaped';
+        }[];
+        images_layout: 'stack' | 'pack';
+        content: string;
+      }[];
+      url: string;
+    };
+  };
+}
 
 export async function getStaticPaths() {
   const caseStudies = await getCollection('case-studies');
 
-  return caseStudies.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  return caseStudies.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { title, summary, goals, img, role, for: forWho, platforms, year, problem, sections, url } = entry.data;
+const {
+  title,
+  summary,
+  goals,
+  img,
+  role,
+  for: forWho,
+  platforms,
+  year,
+  problem,
+  sections,
+  url,
+  password,
+} = entry.data;
 const fullTitle = `Case Study: ${title}`;
 ---
+
 <CaseStudy
   title={fullTitle}
   subtitle={summary}
@@ -29,10 +89,20 @@ const fullTitle = `Case Study: ${title}`;
   platforms={platforms}
   year={year}
   url={url}
+  password={password}
 >
-  {sections.map(({ title, content, image }) => <>
-    {image && <img class="u-border-radius-lg u-shadow-image" src={image.src} alt={image.alt} width={image.width} height={image.height} />}
-    <h2>{title}</h2>
-    <Markdown str={content} />
-  </>)}
+  {
+    sections.map(
+      ({ title, content, image, images, images_layout: imagesLayout }) => (
+        <CaseStudySection
+          title={title}
+          image={image}
+          images={images}
+          imagesLayout={imagesLayout}
+        >
+          <Markdown str={content} />
+        </CaseStudySection>
+      ),
+    )
+  }
 </CaseStudy>

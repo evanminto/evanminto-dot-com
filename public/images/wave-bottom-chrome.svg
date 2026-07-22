@@ -1,0 +1,89 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="black"
+>
+  <g id="huge">
+    <svg viewBox="0 0 1728 23" y="0" height="calc(100% - 39px)" preserveAspectRatio="none">
+      <rect width="100%" height="100%" y="0" />
+    </svg>
+
+    <svg viewBox="0 0 1728 23" preserveAspectRatio="none" y="calc(100% - 40px)" height="40">
+      <path
+        d="M1728 0H0V12.0577C79.529 -2.53207 208.471 -2.53207 288 12.0577C367.529 26.6474 496.471 26.6474 576 12.0577C655.529 -2.53207 784.471 -2.53207 864 12.0577C943.529 26.6474 1072.47 26.6474 1152 12.0577C1231.53 -2.53207 1360.47 -2.53207 1440 12.0577C1519.53 26.6474 1648.47 26.6474 1728 12.0577V0Z"
+      />
+    </svg>
+  </g>
+
+  <g id="large">
+    <svg viewBox="0 0 1728 23" y="0" height="calc(100% - 29px)" preserveAspectRatio="none">
+      <rect width="100%" height="100%" y="0" />
+    </svg>
+
+    <svg viewBox="0 0 1728 23" preserveAspectRatio="none" y="calc(100% - 30px)" height="30">
+      <path
+        d="M1728 0H0V12.0577C79.529 -2.53207 208.471 -2.53207 288 12.0577C367.529 26.6474 496.471 26.6474 576 12.0577C655.529 -2.53207 784.471 -2.53207 864 12.0577C943.529 26.6474 1072.47 26.6474 1152 12.0577C1231.53 -2.53207 1360.47 -2.53207 1440 12.0577C1519.53 26.6474 1648.47 26.6474 1728 12.0577V0Z"
+      />
+    </svg>
+  </g>
+
+  <g id="small">
+    <svg viewBox="0 0 1728 23" y="0" height="calc(100% - 11px)" preserveAspectRatio="none">
+      <rect width="100%" height="100%" y="0" />
+    </svg>
+
+    <svg viewBox="0 0 864 23" preserveAspectRatio="none" y="calc(100% - 12px)" width="100%" height="12">
+      <path 
+        d="M864 0H0V12.0577C39.7645 -2.53207 104.235 -2.53207 144 12.0577C183.764 26.6474 248.236 26.6474 288 12.0577C327.764 -2.53207 392.236 -2.53207 432 12.0577C471.764 26.6474 536.235 26.6474 576 12.0577C615.765 -2.53207 680.235 -2.53207 720 12.0577C759.765 26.6474 824.235 26.6474 864 12.0577V0Z"
+      />
+    </svg>
+  </g>
+
+  <g id="tiny">
+    <svg viewBox="0 0 1728 23" y="0" height="calc(100% - 4px)" preserveAspectRatio="none">
+      <rect width="100%" height="100%" y="0" />
+    </svg>
+
+    <svg viewBox="0 0 864 23" preserveAspectRatio="none" y="calc(100% - 5px)" width="100%" height="5">
+      <path 
+        d="M864 0H0V12.0577C39.7645 -2.53207 104.235 -2.53207 144 12.0577C183.764 26.6474 248.236 26.6474 288 12.0577C327.764 -2.53207 392.236 -2.53207 432 12.0577C471.764 26.6474 536.235 26.6474 576 12.0577C615.765 -2.53207 680.235 -2.53207 720 12.0577C759.765 26.6474 824.235 26.6474 864 12.0577V0Z"
+      />
+    </svg>
+  </g>
+
+  <style>
+    #small,
+    #large {
+      display: none;
+    }
+
+    @media (width > 150px) {
+      #tiny {
+        display: none;
+      }
+
+      #small {
+        display: block;
+      }
+    }
+
+    @media (width > 500px) and (height > 200px) {
+      #small {
+        display: none;
+      }
+
+      #large {
+        display: block;
+      }
+    }
+
+    @media (width > 2000px) and (height > 200px) {
+      #large {
+        display: none;
+      }
+
+      #huge {
+        display: block;
+      }
+    }
+  </style>
+</svg>

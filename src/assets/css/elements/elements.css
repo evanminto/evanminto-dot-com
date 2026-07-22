@@ -186,6 +186,10 @@ a:where(:visited) {
     transform var(--duration-x-short) ease-out;
 }
 
+a:has(> img) {
+  --padding-link: 0;
+}
+
 a:focus-visible {
   color: var(--color-link-focus);
   opacity: 1;
@@ -205,6 +209,42 @@ a:active {
     font-family: var(--font-family-monospace);
     font-size: var(--font-size-smaller);
   }
+}
+
+label {
+  display: block;
+  font-weight: 500;
+}
+
+input:not([type]),
+input[type='text'],
+input[type='password'] {
+  background: var(--color-white);
+  border: 0.125rem solid var(--color-gray-light);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-card);
+  font: inherit;
+  display: block;
+  padding: var(--space-xs);
+  width: 100%;
+}
+
+button:not([type]),
+button[type='submit'] {
+  background: var(--color-blue);
+  border: 0;
+  border-radius: 1000rem;
+  box-shadow: var(--box-shadow-card);
+  color: var(--color-white);
+  font-weight: 500;
+  display: block;
+  padding: var(--space-xs) var(--space-md);
+  font: inherit;
+}
+
+button:not([type]):focus-visible,
+button[type='submit']:focus-visible {
+  outline-offset: -0.25rem;
 }
 
 code {
@@ -251,8 +291,8 @@ pre code {
 
   :focus-visible {
     border-radius: var(--border-radius-md);
-    box-shadow: var(--box-shadow-focus, 0 0 0 0.125rem currentColor);
-    outline: 0;
+    outline: 0.125rem solid currentColor;
+    outline-offset: 0.125rem;
   }
 }
 

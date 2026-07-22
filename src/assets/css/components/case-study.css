@@ -5,11 +5,35 @@
   }
 }
 
+.case-study__section {
+  --flow-gap: var(--space-xxl);
+}
+
 .case-study__image {
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--box-shadow-image);
 }
 
 .case-study__subtitle {
   font-size: var(--font-size-lg);
+}
+
+.case-study__images--pack > * {
+  --flow-gap: 0;
+}
+
+@container (inline-size > 35.5rem) {
+  .case-study__images--grid {
+    display: grid;
+    gap: var(--space-sm);
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .case-study__images--grid > * {
+    margin: 0;
+  }
+
+  /* .case-study__image--landscape {
+    grid-column: 1 / span 2;
+  } */
 }

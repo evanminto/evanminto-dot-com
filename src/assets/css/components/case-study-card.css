@@ -48,6 +48,17 @@
 .case-study-card-new__image {
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow-image);
+  transition-property: scale, rotate;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  overflow: hidden;
+}
+
+@media (any-hover: hover) {
+  .case-study-card-new:has(a:hover) .case-study-card-new__image {
+    scale: 1.05;
+    rotate: 1deg;
+  }
 }
 
 .case-study-card-new__cta {
@@ -58,7 +69,7 @@
   .case-study-card-new {
     flex-direction: row;
     align-items: center;
-    gap: var(--space-md);
+    gap: var(--space-lg);
   }
 
   .case-study-card-new--alternating {

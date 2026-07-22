@@ -288,6 +288,13 @@ declare module 'astro:content' {
   collection: "case-studies";
   data: any
 } & { render(): Render[".md"] };
+"gogov-request-dashboard.md": {
+	id: "gogov-request-dashboard.md";
+  slug: "gogov-request-dashboard";
+  body: string;
+  collection: "case-studies";
+  data: any
+} & { render(): Render[".md"] };
 "promare-title-generator.md": {
 	id: "promare-title-generator.md";
   slug: "promare-title-generator";

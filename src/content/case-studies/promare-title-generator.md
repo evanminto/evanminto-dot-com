@@ -1,5 +1,5 @@
 ---
-sortOrder: 1
+sortOrder: 3
 
 img:
   src: /images/projects/promare-title-generator.jpg

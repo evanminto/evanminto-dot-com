@@ -4,8 +4,10 @@
   font-weight: normal;
   text-decoration: none;
 
-  &:hover {
-    color: var(--color-blue-dark);
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--color-blue-dark);
+    }
   }
 }
 

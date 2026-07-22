@@ -1,0 +1,33 @@
+<svg width="169" height="14" viewBox="0 0 169 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="
+      M0.5 7
+      C8.23199 -0.731987 20.768 -0.731987 28.5 7
+      C36.232 14.732 48.768 14.732 56.5 7
+      C64.232 -0.731987 76.768 -0.731987 84.5 7
+      C92.232 14.732 104.768 14.732 112.5 7
+      C120.232 -0.731987 132.768 -0.731987 140.5 7
+      C148.232 14.732 160.768 14.732 168.5 7
+    "
+    stroke="black"
+    stroke-linecap="round"
+  />
+
+  <style>
+    svg path {
+      stroke-dasharray: 355;
+      stroke-dashoffset: 355;
+      transition: stroke-dashoffset 2s ease-in-out;
+    }
+
+    svg:hover path {
+      stroke-dashoffset: 169;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</svg>

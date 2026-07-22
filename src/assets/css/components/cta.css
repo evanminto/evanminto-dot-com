@@ -35,28 +35,30 @@
       left 250ms ease-in-out 120ms;
 
     &:last-of-type {
-      width: 3.43rem;
+      width: 2em;
       max-width: none;
       opacity: 0;
     }
   }
 }
 
-.cta:hover {
-  svg {
-    opacity: 0;
-    left: 1.25rem;
-    transition:
-      opacity 250ms ease-in-out 120ms,
-      left 250ms ease-in-out;
+@media (any-hover: hover) {
+  .cta:hover {
+    svg {
+      opacity: 0;
+      left: 1.25rem;
+      transition:
+        opacity 250ms ease-in-out 120ms,
+        left 250ms ease-in-out;
 
-    &:last-of-type {
-      opacity: 1;
-      left: 0;
+      &:last-of-type {
+        opacity: 1;
+        left: 0;
+      }
     }
-  }
 
-  .cta__icon {
-    width: 3.43rem;
+    .cta__icon {
+      width: 2em;
+    }
   }
 }

@@ -3,6 +3,7 @@ import Default from './Default.astro';
 import Markdown from '../components/Markdown.jsx';
 import Cta from '../components/Cta.astro';
 import CaseStudyMeta from '../components/CaseStudyMeta.astro';
+import { PasswordProtect } from '../components/PasswordProtect.tsx';
 
 interface Props {
   title: string;
@@ -15,9 +16,9 @@ interface Props {
   year: string;
   image: { src: string; width: number; height: number };
   url: string;
+  password?: string;
 }
 
-const { slug } = Astro.params;
 const {
   title,
   subtitle,
@@ -29,6 +30,7 @@ const {
   problem,
   image,
   url,
+  password,
 } = Astro.props;
 ---
 
@@ -41,7 +43,7 @@ const {
             src={image?.src}
             width={image.width}
             height={image.height}
-            class="case-study__image"
+            class="u-shadow-image case-study__image"
           />
         )
       }
@@ -68,38 +70,74 @@ const {
       }
 
       {
-        problem && (
+        password ? (
+          <div>
+            <PasswordProtect
+              password={password}
+              message="This content contains confidential information. To view it, please contact me to request a password."
+              client:visible
+            >
+              {problem && (
+                <>
+                  <h2>Problem</h2>
+
+                  <div>
+                    <Markdown str={problem} />
+                  </div>
+                </>
+              )}
+
+              {goals && (
+                <>
+                  <h2>Goals</h2>
+
+                  <ol>
+                    {goals.map((goal) => (
+                      <li>{goal}</li>
+                    ))}
+                  </ol>
+                </>
+              )}
+
+              <slot />
+              {url && (
+                <p>
+                  <Cta href={url}>View Project</Cta>
+                </p>
+              )}
+            </PasswordProtect>
+          </div>
+        ) : (
           <>
-            <h2>Problem</h2>
+            {problem && (
+              <>
+                <h2>Problem</h2>
 
-            <div>
-              <Markdown str={problem} />
-            </div>
+                <div>
+                  <Markdown str={problem} />
+                </div>
+              </>
+            )}
+
+            {goals && (
+              <>
+                <h2>Goals</h2>
+
+                <ol>
+                  {goals.map((goal) => (
+                    <li>{goal}</li>
+                  ))}
+                </ol>
+              </>
+            )}
+
+            <slot />
+            {url && (
+              <p>
+                <Cta href={url}>View Project</Cta>
+              </p>
+            )}
           </>
-        )
-      }
-
-      {
-        goals && (
-          <>
-            <h2>Goals</h2>
-
-            <ol>
-              {goals.map((goal) => (
-                <li>{goal}</li>
-              ))}
-            </ol>
-          </>
-        )
-      }
-
-      <slot />
-
-      {
-        url && (
-          <p>
-            <Cta href={url}>View Project</Cta>
-          </p>
         )
       }
     </div>

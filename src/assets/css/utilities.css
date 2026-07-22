@@ -1,6 +1,7 @@
 .u-visually-hidden {
   position: absolute !important;
-  height: 1px; width: 1px;
+  height: 1px;
+  width: 1px;
   overflow: hidden;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
@@ -24,4 +25,16 @@
 
 .u-border-radius-lg {
   border-radius: var(--border-radius-lg);
+}
+
+.u-block {
+  display: block !important;
+}
+
+.u-flow-gap-sm > * {
+  --flow-gap: var(--space-sm);
+}
+
+.u-flow-gap-0 > * {
+  --flow-gap: 0;
 }

@@ -1,5 +1,5 @@
 ---
-sortOrder: 0
+sortOrder: 2
 
 img:
   src: /images/projects/azuki.jpg

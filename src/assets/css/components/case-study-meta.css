@@ -1,3 +1,9 @@
 .case-study-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-xs) var(--space-sm);
+
+  > * {
+    --flow-gap: 0;
+  }
 }

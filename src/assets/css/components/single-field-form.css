@@ -1,0 +1,24 @@
+.single-field-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+
+  > * {
+    --flow-gap: 0;
+  }
+
+  > :first-child {
+    flex: 1 1 auto;
+  }
+
+  @container (min-inline-size: 20rem) {
+    align-items: flex-end;
+    flex-direction: row;
+  }
+}
+
+.single-field-form__field {
+  > * {
+    --flow-gap: 0;
+  }
+}

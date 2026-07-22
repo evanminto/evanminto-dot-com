@@ -2,4 +2,5 @@
 dist
 node_modules
 .parcel-cache
-public/
+public/old-site/
+public/games/

@@ -1,8 +1,8 @@
 .o-site-footer {
   --o-site-footer__edge-height: var(--space-sm);
-  --color-link: var(--color-black-100);
-  --color-link-hover: var(--color-white);
-  --color-link-focus: var(--color-white);
+  --color-link: var(--color-blue);
+  --color-link-hover: var(--color-blue-dark);
+  --color-link-focus: var(--color-blue-dark);
   --flow-gap: var(--space-xl);
 
   position: relative;

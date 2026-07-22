@@ -16,11 +16,13 @@
     }
   }
 
-  .a-logo-link:hover {
-    color: var(--color-orange);
+  @media (any-hover: hover) {
+    .a-logo-link:hover {
+      color: var(--color-orange);
 
-    .a-logo-link__first {
-      color: var(--color-white);
+      .a-logo-link__first {
+        color: var(--color-white);
+      }
     }
   }
 }

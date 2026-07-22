@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  image: {
+    src: string;
+    src_2x?: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    shadow?: 'box' | 'shaped';
+  };
+  images: {
+    src: string;
+    src_2x?: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    shadow?: 'box' | 'shaped';
+  }[];
+  imagesLayout: 'stack' | 'pack' | 'grid';
+}
+
+const { image, images, imagesLayout, title } = Astro.props;
+---
+
+<div class="case-study__section container">
+  <div class={`case-study__images case-study__images--${imagesLayout}`}>
+    {
+      (images ?? (image ? [image] : [])).map(
+        ({ src, src_2x, alt, width, height, shadow }) => (
+          <img
+            class={`u-border-radius-lg u-shadow-image case-study__image ${
+              shadow === 'shaped' ? 'case-study__image--shadow-shaped' : ''
+            } ${
+              height === undefined || width === undefined
+                ? ''
+                : height === width
+                ? 'case-study__image--square'
+                : height > width
+                ? 'case-study__image--portrait'
+                : 'case-study__image--landscape'
+            }`}
+            src={src}
+            srcset={src_2x ? `${src_2x} 2x, ${src}` : undefined}
+            alt={alt}
+            width={width}
+            height={height}
+            style={
+              height === undefined || width === undefined
+                ? undefined
+                : `--case-study__images__aspect-ratio: ${height / width}`
+            }
+          />
+        ),
+      )
+    }
+  </div>
+  <h2>{title}</h2>
+  <slot />
+</div>

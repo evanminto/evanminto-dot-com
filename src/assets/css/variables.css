@@ -4,14 +4,18 @@
   --color-blue: #4900e5;
   --color-blue-light: #4900e5;
   --color-blue-dark: rgb(39, 0, 145);
+  --color-orange-light-2: hsl(256, 70%, 90%);
   --color-orange: #dfff0b;
   --color-orange-dark: #dfff0b;
+  --color-orange-dark-2: hsl(68, 86%, 20%);
+  --color-orange-light: hsl(68, 71%, 85%);
   --color-off-white: hsl(var(--color-h-blue), 20%, 93%);
   --color-off-white-2: hsl(var(--color-h-blue), 15%, 96%);
   --color-white: white;
   --color-black-100: black;
   --color-black: hsl(var(--color-h-blue), 50%, 7%);
   --color-gray: hsl(var(--color-h-blue), 10%, 45%);
+  --color-gray-light: hsl(var(--color-h-blue), 10%, 67%);
   --color-gray-shadow: hsl(var(--color-h-blue), 10%, 85%);
   --color-shadow: hsla(var(--color-h-blue), 50%, 7%, 0.167);
 
@@ -31,7 +35,7 @@
   --font-family-monospace: monospace;
 
   --font-scale: 1.25;
-  --font-size-md: calc(0.9rem + 0.2vw + 0.2vh);
+  --font-size-md: 1rem;
   --font-size-sm: calc(var(--font-size-md) / var(--font-scale));
   --font-size-lg: calc(var(--font-size-md) * var(--font-scale));
   --font-size-xl: calc(var(--font-size-lg) * var(--font-scale));
@@ -106,6 +110,13 @@
 @media only screen and (min-width: 40em) {
   :root {
     --font-scale: 1.333;
+    --font-size-md: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  :root {
+    --font-size-md: 1.333rem;
   }
 }
 

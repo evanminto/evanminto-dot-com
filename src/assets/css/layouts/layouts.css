@@ -139,6 +139,10 @@
   padding: 0;
 }
 
+.l-grid--small {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 8rem), 1fr));
+}
+
 .l-grid--fit {
   grid-template-columns: repeat(auto-fit, minmax(calc(20% + 8rem), 1fr));
 }
@@ -153,7 +157,13 @@
   & > * {
     flex-grow: calc(9999 * var(--l-masonry-horizontal__ratio));
     flex-shrink: calc(1 / (var(--l-masonry-horizontal__ratio)));
-    flex-basis: min(calc(var(--l-masonry-horizontal__ratio) * var(--l-masonry-horizontal__min-height)), 100%);
+    flex-basis: min(
+      calc(
+        var(--l-masonry-horizontal__ratio) *
+          var(--l-masonry-horizontal__min-height)
+      ),
+      100%
+    );
     margin: 0;
   }
 }
