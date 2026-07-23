@@ -14,7 +14,7 @@ interface Props {
   forWho: string;
   platforms: string;
   year: string;
-  image: { src: string; width: number; height: number };
+  image: { src: string; alt: string; width: number; height: number };
   url: string;
   password?: string;
 }
@@ -40,7 +40,8 @@ const {
       {
         image && (
           <img
-            src={image?.src}
+            src={image.src}
+            alt={image.alt}
             width={image.width}
             height={image.height}
             class="u-shadow-image case-study__image"

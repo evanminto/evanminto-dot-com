@@ -4,7 +4,7 @@ password: gg2026
 
 img:
   src: /images/projects/gogov-request-dashboard/figma-desktop-map.webp
-  alt: ''
+  alt: A map view showing requests from citizens.
   width: 3288
   height: 1644
 
@@ -29,12 +29,12 @@ sections:
     images:
       - src: /images/projects/gogov-request-dashboard/research_1x.webp
         src_2x: /images/projects/gogov-request-dashboard/research_2x.webp
-        alt: ''
+        alt: Example screenshots from Google Maps, Trello, Jira, and Zillow.
         width: 1481
         height: 1135
         shadow: shaped
       - src: /images/projects/gogov-request-dashboard/object-mapping.png
-        alt: ''
+        alt: An object mapping exercise, showing CRM requests, departments, attachments, and more along with their attributes and relationships.
         shadow: shaped
     content: |
       The product manager had already decided the core feature set, but I proposed a design research phase to flesh out the details and validate our assumptions. This phase included:
@@ -49,10 +49,10 @@ sections:
   - title: 'Phase 2: Flows & Wireframes'
     images:
       - src: /images/projects/gogov-request-dashboard/priority-guides.png
-        alt: ''
+        alt: Priority guides. They show content in linear top-down order with minimal styling for each request.
         shadow: shaped
       - src: /images/projects/gogov-request-dashboard/wireframes.png
-        alt: ''
+        alt: Wireframes showing the same content from the priority guides laid out in a side-by-side layout.
         shadow: shaped
     images_layout: pack
     content: |
@@ -68,14 +68,14 @@ sections:
   - title: 'Phase 3: Mockups'
     images:
       - src: /images/projects/gogov-request-dashboard/map-layouts.png
-        alt: ''
+        alt: Three options for layouts for the map view, showing a list at the bottom, a popover anchored to the pin, and a card anchored to the bottom.
         shadow: shaped
       - src: /images/projects/gogov-request-dashboard/figma-map.png
-        alt: ''
+        alt: A map view showing requests from citizens.
         width: 1981
         height: 876
       - src: /images/projects/gogov-request-dashboard/figma-table.png
-        alt: ''
+        alt: A table view showing requests from citizens.
         width: 1927
         height: 877
     content: |
@@ -98,7 +98,7 @@ sections:
   - title: 'Phase 4: Final'
     images:
       - src: /images/projects/gogov-request-dashboard/figma-component.png
-        alt: ''
+        alt: A request card component showing many variations of metadata and images with copious annotations.
         width: 1569
         height: 1259
     content: |

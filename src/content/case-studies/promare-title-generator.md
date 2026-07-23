@@ -3,7 +3,7 @@ sortOrder: 3
 
 img:
   src: /images/projects/promare-title-generator.jpg
-  alt: ''
+  alt: Bold text saying “Promare Title Generator” with smaller script text on top that says “You’re Welcome.”
   width: 800
   height: 567
 

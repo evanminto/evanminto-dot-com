@@ -38,3 +38,7 @@
 .u-flow-gap-0 > * {
   --flow-gap: 0;
 }
+
+.u-text-wrap-pretty {
+  text-wrap: pretty !important;
+}

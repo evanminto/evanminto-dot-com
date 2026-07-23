@@ -12,7 +12,6 @@ const { title } = frontmatter;
 
 const byNewestFirst = (e1, e2) => (e1.data.endDate > e2.data.endDate ? -1 : 1);
 
-const caseStudies = await getCollection('case-studies');
 const games = [...(await getCollection('games'))].sort(byNewestFirst);
 const artProjects = [...(await getCollection('art'))].sort(byNewestFirst);
 ---

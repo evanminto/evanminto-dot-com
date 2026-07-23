@@ -3,7 +3,7 @@ sortOrder: 1
 
 img:
   src: /images/projects/azuki-discover-mockups.jpg
-  alt: ''
+  alt: Mockups of the discover screen showing a filter sidebar
   width: 1000
   height: 837
 
@@ -35,7 +35,7 @@ sections:
   - title: 'Phase 2: Exploration'
     image:
       src: /images/projects/azuki-discover-exploration.jpg
-      alt: ''
+      alt: Sketches and Figma concepts for how to display the filters, including a list of pills, a dropdown, and checkboxes.
     content: |
       I explored design variations both in Figma and on paper, including options that exposed filters upfront and ones that hid them behind a progressive disclosure to give more focus to the content.
 
@@ -43,7 +43,7 @@ sections:
   - title: 'Phase 3: Mockups'
     image:
       src: /images/projects/azuki-discover-mockups.jpg
-      alt: ''
+      alt: The finished mockups, using a top tab bar, a toggleable filter panel, and pills underneath the search bar.
     content: |
       From there I polished the designs, including additional elements like pills to show the current filters and a way to view upcoming releases. I also added interactions like filter clearing.
   - title: Results

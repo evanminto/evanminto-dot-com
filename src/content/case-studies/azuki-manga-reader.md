@@ -38,6 +38,7 @@ sections:
       I opted for a partially transparent overlay that could be dismissed by tapping the manga page, a compromise between maximizing the content size and educating the user upfront about the interactions available in the reader. I translated this layout into Figma mockups before moving ahead to the next phase.
     image:
       src: /images/projects/azuki-reader-exploration.jpg
+      alt: Sketches of various options for the reader. Includes top and bottom navigation and a page thumbnail viewer.
       width: 6372
       height: 2894
   - title: 'Phase 3: Prototype & Testing'
@@ -47,6 +48,7 @@ sections:
       However, the overlay consistently confused users, and some were unable to figure out how to dismiss it, leaving the content obscured by default.
     image:
       src: /images/projects/azuki-reader-prototyping.jpg
+      alt: A prototype of the reader with semitransparent top and bottom navigation overlays.
       width: 5734
       height: 2846
   - title: 'Phase 4: Revisions & Final Mockups'

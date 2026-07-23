@@ -1,6 +1,17 @@
 .a-skip-link {
   background: var(--color-white);
-  border-radius: 0;
-  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-xxs) var(--space-sm);
   text-shadow: none;
+  text-decoration: none;
+  width: max-content;
+  max-width: 100%;
+}
+
+.a-skip-link:focus {
+  position: fixed;
+  z-index: 2;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  outline-offset: -0.25rem;
 }
